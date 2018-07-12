@@ -14,11 +14,17 @@ namespace PreSys.Controllers
             return View();
         }
 
+        public ActionResult ForgotPassword()
+        {
+            return View();
+        }
+
         public JsonResult GetUsers(string user, string password)
         {
             var result = "";
             return Json(result, JsonRequestBehavior.AllowGet);
 
         }
+        
     }
 }

@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LoginLayout.cshtml";
+}
+
+<!-- Content Wrapper -->
+<div class="register-wrapper">
+    <div class="container-center lg">
+        <div class="panel panel-bd">
+            <div class="panel-heading">
+                <div class="view-header">
+                    <div class="header-icon">
+                        <i class="pe-7s-pen"></i>
+                    </div>
+                    <div class="header-title">
+                        <h3>Registrate</h3>
+                        <small><strong>Por favor entrar tus datos<br> para registrarte.</strong></small>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <form action="index.html" id="loginForm" novalidate>
+                    <!--Social Buttons-->
+                    @*<div class="social">
+                        <strong>Register in using social network:</strong><br>
+                        <div class="twitter_bg"><i class="fa fa-twitter"></i><a href="#" class="btn_1">Login Twitter</a></div>
+                        <div class="fb_bg"><i class="fa fa-facebook"></i><a href="#" class="btn_2">Login Facebook</a></div>
+                    </div>*@
+                    <div class="form-group">
+                        <label class="control-label">Usuario</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="username" type="text" class="form-control" name="email" placeholder="Usuario">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Clave</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                            <input id="pass" type="password" class="form-control" name="password" placeholder="******">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Repetir Clave</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                            <input id="rpass" type="password" class="form-control" name="rpass" placeholder="******">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Correo</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                            <input id="email" type="password" class="form-control" name="email" placeholder="Por favor digite su correo.">
+                        </div>
+                    </div>
+                    <div>
+                        <a href="/Login" class="btn btn-base pull-right">Registrate</a>
+                        @*<a href="login.html" class="btn btn-base pull-right m-r-5">Entrar</a>*@
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.content-wrapper -->
