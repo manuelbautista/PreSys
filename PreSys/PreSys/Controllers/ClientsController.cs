@@ -13,5 +13,15 @@ namespace PreSys.Controllers
         {
             return View("ClientsList");
         }
-    }
+
+        public ActionResult New()
+        {
+            return View("New");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            return View("Edit");
+        }
+     }
 }

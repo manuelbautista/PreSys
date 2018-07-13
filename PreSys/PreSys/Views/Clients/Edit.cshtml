@@ -1,0 +1,160 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#tabCliente" data-toggle="tab">Cliente</a></li>
+            <li><a href="#tabEmpleo" data-toggle="tab">Empleo</a></li>
+            <li><a href="#tabDireccion" data-toggle="tab">Direccion</a></li>
+            <li><a href="#tabTelefonos" data-toggle="tab">Telefonos</a></li>
+            <li><a href="#tabReferencias" data-toggle="tab">Referencias</a></li>
+            <li><a href="#tabRedes" data-toggle="tab">Correo-Redes</a></li>
+        </ul>
+        <!-- Tab panels -->
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="tabCliente">
+                <div class="row">
+                    <!-- Form controls -->
+                    <div class="col-sm-6">
+                        <div class="panel panel-bd lobidrag">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+
+                                </div>
+                            </div>
+                            <div class="panel-body">
+
+                                <form>
+                                    <div class="form-group">
+                                        <label for="Identificacion">Identificacion</label>
+                                        <input type="email" class="form-control" id="Identificacion" aria-describedby="emailHelp" placeholder="Digite la identificaion">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Nombres">Nombres</label>
+                                        <input type="email" class="form-control" id="Nombres" aria-describedby="emailHelp" placeholder="Digite el nombre completo">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Identificacion">Apellidos</label>
+                                        <input type="email" class="form-control" id="Apellidos" aria-describedby="emailHelp" placeholder="Digite los apellidos">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="fechaNac">Fecha Nac</label>
+                                        <input class="form-control" type="date" value="2011-08-19" id="fechaNac">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Nacionalidad">Nacionalidad</label>
+                                        <input type="email" class="form-control" id="Nacionalidad" aria-describedby="emailHelp" placeholder="Digite la nacionalidad">
+                                    </div>
+
+                                    <fieldset class="form-group">
+                                        <legend>Genero</legend>
+                                        <div>
+                                            <label class="form-check-label">
+                                                <input type="radio" name="optionsRadios" id="optionsRadioFemenino" value="optionRadioFemenino" checked>
+                                                Femenino
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="form-check-label">
+                                                <input type="radio" name="optionsRadios" id="optionsRadioMasculino" value="optionRadioMasculino">
+                                                Masculino
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                    <div class="form-group">
+                                        <label for="EstadoCivil">Estado Civil</label>
+                                        <select class="form-control" id="EstadoCivil">
+                                            <option>Casado</option>
+                                            <option>Soltero</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Profesion">Profesion</label>
+                                        <input type="email" class="form-control" id="Profesion" aria-describedby="emailHelp" placeholder="Digite la profesion">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Apodo">Apodo</label>
+                                        <input type="email" class="form-control" id="Apodo" aria-describedby="emailHelp" placeholder="Digite el apodo">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="NumHijos">Num. Hijos</label>
+                                        <input type="email" class="form-control" id="NumHijos" aria-describedby="emailHelp" placeholder="Cuantos Hijos tiene?">
+                                    </div>
+                                    <button type="submit" class="btn btn-base pull-right">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="tabEmpleo">
+                <div class="panel-body">
+                    <p><strong>Lorem Ipsum is simply dummy text of the printing and. </strong></p>
+                    <p>
+                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                        The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content
+                        here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use
+                        Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
+                    </p>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="tabDireccion">
+                <div class="panel-body">
+                    <p><strong>Lorem Ipsum is simply dummy text of the printing and. </strong></p>
+                    <p>
+                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                        The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content
+                        here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use
+                        Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
+                    </p>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="tabTelefonos">
+                <div class="panel-body">
+                    <p><strong>Lorem Ipsum is simply dummy text of the printing and. </strong></p>
+                    <p>
+                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                        The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content
+                        here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use
+                        Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
+                    </p>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="tabReferencias">
+                <div class="panel-body">
+                    <p><strong>Lorem Ipsum is simply dummy text of the printing and. </strong></p>
+                    <p>
+                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                        The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content
+                        here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use
+                        Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
+                    </p>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="tabRedes">
+                <div class="panel-body">
+                    <p><strong>Lorem Ipsum is simply dummy text of the printing and. </strong></p>
+                    <p>
+                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                        The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content
+                        here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use
+                        Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // A $( document ).ready() block.
+    $( document ).ready(function() {
+        $("#clientsLi").addClass( "active");
+    });
+</script>
