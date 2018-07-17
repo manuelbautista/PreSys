@@ -182,128 +182,199 @@
                 </div>
             </div>
             <div class="tab-pane fade" id="tabDireccion">
-                <div class="panel-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="Identificacion">Identificacion</label>
-                            <input type="email" class="form-control" id="Identificacion" aria-describedby="emailHelp" placeholder="Digite la identificaion">
-                        </div>
-                        <div class="form-group">
-                            <label for="Nombres">Nombres</label>
-                            <input type="email" class="form-control" id="Nombres" aria-describedby="emailHelp" placeholder="Digite el nombre completo">
-                        </div>
-                        <div class="form-group">
-                            <label for="Identificacion">Apellidos</label>
-                            <input type="email" class="form-control" id="Apellidos" aria-describedby="emailHelp" placeholder="Digite los apellidos">
-                        </div>
-                        <div class="form-group">
-                            <label for="fechaNac">Fecha Nac</label>
-                            <input class="form-control" type="date" value="2011-08-19" id="fechaNac">
+            <div class="panel-body">
+                <form>
+                    <div class="form-group">
+                        <label for="Calle">Calle</label>
+                        <input type="email" class="form-control" id="Calle" aria-describedby="emailHelp" placeholder="Digite la calle/avenida">
+                    </div>
+                    <div class="form-group">
+                        <label for="Esquina">Esquina</label>
+                        <input type="email" class="form-control" id="Esquina" aria-describedby="emailHelp" placeholder="Digite la esquina">
+                    </div>
+                    <div class="form-group">
+                        <label for="Numero">Numero</label>
+                        <input type="email" class="form-control" id="Numero" aria-describedby="emailHelp" placeholder="Num">
+                    </div>
+                    <div class="form-group">
+                        <label for="Edificio">Edificio</label>
+                        <input type="email" class="form-control" id="Edificio" aria-describedby="emailHelp" placeholder="Digite el edificio">
+                    </div>
+                    <div class="form-group">
+                        <label for="Residencial">Residencial</label>
+                        <input type="email" class="form-control" id="Residencial" aria-describedby="emailHelp" placeholder="Residencial">
+                        <input type="email" class="form-control" id="Piso" aria-describedby="emailHelp" placeholder="Piso">
+                    </div>
 
-                        </div>
-                        <div class="form-group">
-                            <label for="Nacionalidad">Nacionalidad</label>
-                            <input type="email" class="form-control" id="Nacionalidad" aria-describedby="emailHelp" placeholder="Digite la nacionalidad">
-                        </div>
+                    <div class="form-group">
+                        <label for="Apartamento">Apartamento</label>
+                        <input type="email" class="form-control" id="Apartamento" aria-describedby="emailHelp" placeholder="Digite el apartamento">
+                    </div>
 
-                        <fieldset class="form-group">
-                            <legend>Genero</legend>
-                            <div>
-                                <label class="form-check-label">
-                                    <input type="radio" name="optionsRadios" id="optionsRadioFemenino" value="optionRadioFemenino" checked>
-                                    Femenino
-                                </label>
+                    <div class="form-group">
+                        <label for="Sector">Sector</label>
+                        <input type="email" class="form-control" id="Sector" aria-describedby="emailHelp" placeholder="Digite el sector">
+                    </div>
+                    <div class="form-group">
+                        <label for="Sector">Color</label>
+                        <input type="email" class="form-control" id="Color" aria-describedby="emailHelp" placeholder="Digite el color">
+                    </div>
+                    <div class="form-group">
+                        <label for="Referencias">Referencias</label>
+                        <input type="email" class="form-control" id="Referencias" aria-describedby="emailHelp" placeholder="Digite referencias">
+                    </div>
+                    <div class="form-group">
+                        <label for="Ciudad">Ciudad</label>
+                        <select class="form-control" id="Ciudad">
+                            <option>Distrito Nacional</option>
+                            <option>Santiago</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Provincia">Provincia</label>
+                        <select class="form-control" id="Provincia">
+                            <option>Santo Domingo</option>
+                            <option>Boca Chica</option>
+                        </select>
+                    </div>
+
+                    <fieldset class="form-group">
+                        <legend>Es Propio</legend>
+                        <div>
+                            <label class="form-check-label">
+                                <input type="radio" name="optionsRadios" id="EsPropioSi" value="optionRadioEsPropioSi" checked>
+                                Si
+                            </label>
+                        </div>
+                        <div>
+                            <label class="form-check-label">
+                                <input type="radio" name="optionsRadios" id="EsPropioNo" value="optionRadioEsPropioNo">
+                                No
+                            </label>
+                        </div>
+                    </fieldset>
+                    <div class="form-group">
+                        <label for="Detalles">Detalles</label>
+                        <input type="email" class="form-control" id="Detalles" aria-describedby="emailHelp" placeholder="Detalle">
+                    </div>
+                    <div class="form-group">
+                        <label for="FechaResidencia">Fecha</label>
+                        <input class="form-control" type="date" value="2011-08-19" id="FechaResidencia">
+                    </div>
+                    <button type="submit" class="btn btn-base pull-right">Guardar</button>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="panel panel-bd lobidrag">
+                                <div class="panel-heading">
+                                    <div class="panel-title">
+                                        <h4>Direcciones</h4>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="table-responsive">
+                                        <table id="dataTableExample1" class="table table-bordered table-striped table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Position</th>
+                                                <th>Office</th>
+                                                <th>Age</th>
+                                                <th>Start date</th>
+                                                <th>Salary</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>Tiger Nixon</td>
+                                                <td>System Architect</td>
+                                                <td>Edinburgh</td>
+                                                <td>61</td>
+                                                <td>2011/04/25</td>
+                                                <td>$320,800</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Garrett Winters</td>
+                                                <td>Accountant</td>
+                                                <td>Tokyo</td>
+                                                <td>63</td>
+                                                <td>2011/07/25</td>
+                                                <td>$170,750</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <label class="form-check-label">
-                                    <input type="radio" name="optionsRadios" id="optionsRadioMasculino" value="optionRadioMasculino">
-                                    Masculino
-                                </label>
-                            </div>
-                        </fieldset>
-                        <div class="form-group">
-                            <label for="EstadoCivil">Estado Civil</label>
-                            <select class="form-control" id="EstadoCivil">
-                                <option>Casado</option>
-                                <option>Soltero</option>
-                            </select>
                         </div>
-                        <div class="form-group">
-                            <label for="Profesion">Profesion</label>
-                            <input type="email" class="form-control" id="Profesion" aria-describedby="emailHelp" placeholder="Digite la profesion">
-                        </div>
-                        <div class="form-group">
-                            <label for="Apodo">Apodo</label>
-                            <input type="email" class="form-control" id="Apodo" aria-describedby="emailHelp" placeholder="Digite el apodo">
-                        </div>
-                        <div class="form-group">
-                            <label for="NumHijos">Num. Hijos</label>
-                            <input type="email" class="form-control" id="NumHijos" aria-describedby="emailHelp" placeholder="Cuantos Hijos tiene?">
-                        </div>
-                        <button type="submit" class="btn btn-base pull-right">Guardar</button>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
+        </div>
+
             <div class="tab-pane fade" id="tabTelefonos">
                 <div class="panel-body">
                     <form>
                         <div class="form-group">
-                            <label for="Identificacion">Identificacion</label>
-                            <input type="email" class="form-control" id="Identificacion" aria-describedby="emailHelp" placeholder="Digite la identificaion">
-                        </div>
-                        <div class="form-group">
-                            <label for="Nombres">Nombres</label>
-                            <input type="email" class="form-control" id="Nombres" aria-describedby="emailHelp" placeholder="Digite el nombre completo">
-                        </div>
-                        <div class="form-group">
-                            <label for="Identificacion">Apellidos</label>
-                            <input type="email" class="form-control" id="Apellidos" aria-describedby="emailHelp" placeholder="Digite los apellidos">
-                        </div>
-                        <div class="form-group">
-                            <label for="fechaNac">Fecha Nac</label>
-                            <input class="form-control" type="date" value="2011-08-19" id="fechaNac">
-
-                        </div>
-                        <div class="form-group">
-                            <label for="Nacionalidad">Nacionalidad</label>
-                            <input type="email" class="form-control" id="Nacionalidad" aria-describedby="emailHelp" placeholder="Digite la nacionalidad">
-                        </div>
-
-                        <fieldset class="form-group">
-                            <legend>Genero</legend>
-                            <div>
-                                <label class="form-check-label">
-                                    <input type="radio" name="optionsRadios" id="optionsRadioFemenino" value="optionRadioFemenino" checked>
-                                    Femenino
-                                </label>
-                            </div>
-                            <div>
-                                <label class="form-check-label">
-                                    <input type="radio" name="optionsRadios" id="optionsRadioMasculino" value="optionRadioMasculino">
-                                    Masculino
-                                </label>
-                            </div>
-                        </fieldset>
-                        <div class="form-group">
-                            <label for="EstadoCivil">Estado Civil</label>
-                            <select class="form-control" id="EstadoCivil">
-                                <option>Casado</option>
-                                <option>Soltero</option>
+                            <label for="TipoTelefono">Tipo</label>
+                            <select class="form-control" id="TipoTelefono">
+                                <option>Fijo</option>
+                                <option>Celular</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="Profesion">Profesion</label>
-                            <input type="email" class="form-control" id="Profesion" aria-describedby="emailHelp" placeholder="Digite la profesion">
+                            <label for="telTelefono">Telefono</label>
+                            <input type="email" class="form-control" id="telTelefono" aria-describedby="emailHelp" placeholder="Digite el telefono">
                         </div>
                         <div class="form-group">
-                            <label for="Apodo">Apodo</label>
-                            <input type="email" class="form-control" id="Apodo" aria-describedby="emailHelp" placeholder="Digite el apodo">
-                        </div>
-                        <div class="form-group">
-                            <label for="NumHijos">Num. Hijos</label>
-                            <input type="email" class="form-control" id="NumHijos" aria-describedby="emailHelp" placeholder="Cuantos Hijos tiene?">
+                            <label for="telExtencion">Extencion</label>
+                            <input type="email" class="form-control" id="telExtencion" aria-describedby="emailHelp" placeholder="Digite la extencion">
                         </div>
                         <button type="submit" class="btn btn-base pull-right">Guardar</button>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="panel panel-bd lobidrag">
+                                    <div class="panel-heading">
+                                        <div class="panel-title">
+                                            <h4>Telefonos</h4>
+                                        </div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="table-responsive">
+                                            <table id="dataTableExample1" class="table table-bordered table-striped table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Position</th>
+                                                        <th>Office</th>
+                                                        <th>Age</th>
+                                                        <th>Start date</th>
+                                                        <th>Salary</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Tiger Nixon</td>
+                                                        <td>System Architect</td>
+                                                        <td>Edinburgh</td>
+                                                        <td>61</td>
+                                                        <td>2011/04/25</td>
+                                                        <td>$320,800</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Garrett Winters</td>
+                                                        <td>Accountant</td>
+                                                        <td>Tokyo</td>
+                                                        <td>63</td>
+                                                        <td>2011/07/25</td>
+                                                        <td>$170,750</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -311,125 +382,150 @@
                 <div class="panel-body">
                     <form>
                         <div class="form-group">
-                            <label for="Identificacion">Identificacion</label>
-                            <input type="email" class="form-control" id="Identificacion" aria-describedby="emailHelp" placeholder="Digite la identificaion">
-                        </div>
-                        <div class="form-group">
-                            <label for="Nombres">Nombres</label>
-                            <input type="email" class="form-control" id="Nombres" aria-describedby="emailHelp" placeholder="Digite el nombre completo">
-                        </div>
-                        <div class="form-group">
-                            <label for="Identificacion">Apellidos</label>
-                            <input type="email" class="form-control" id="Apellidos" aria-describedby="emailHelp" placeholder="Digite los apellidos">
-                        </div>
-                        <div class="form-group">
-                            <label for="fechaNac">Fecha Nac</label>
-                            <input class="form-control" type="date" value="2011-08-19" id="fechaNac">
-
-                        </div>
-                        <div class="form-group">
-                            <label for="Nacionalidad">Nacionalidad</label>
-                            <input type="email" class="form-control" id="Nacionalidad" aria-describedby="emailHelp" placeholder="Digite la nacionalidad">
-                        </div>
-
-                        <fieldset class="form-group">
-                            <legend>Genero</legend>
-                            <div>
-                                <label class="form-check-label">
-                                    <input type="radio" name="optionsRadios" id="optionsRadioFemenino" value="optionRadioFemenino" checked>
-                                    Femenino
-                                </label>
-                            </div>
-                            <div>
-                                <label class="form-check-label">
-                                    <input type="radio" name="optionsRadios" id="optionsRadioMasculino" value="optionRadioMasculino">
-                                    Masculino
-                                </label>
-                            </div>
-                        </fieldset>
-                        <div class="form-group">
-                            <label for="EstadoCivil">Estado Civil</label>
-                            <select class="form-control" id="EstadoCivil">
-                                <option>Casado</option>
-                                <option>Soltero</option>
+                            <label for="refParentesco">Parentesco</label>
+                            <select class="form-control" id="refParentesco">
+                                <option>Esposo</option>
+                                <option>Hermano</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="Profesion">Profesion</label>
-                            <input type="email" class="form-control" id="Profesion" aria-describedby="emailHelp" placeholder="Digite la profesion">
+                            <label for="refReferencia">Referencia</label>
+                            <input type="email" class="form-control" id="refReferencia" aria-describedby="emailHelp" placeholder="Digite la referencia">
                         </div>
                         <div class="form-group">
-                            <label for="Apodo">Apodo</label>
-                            <input type="email" class="form-control" id="Apodo" aria-describedby="emailHelp" placeholder="Digite el apodo">
+                            <label for="refDireccion">Direccion</label>
+                            <input type="email" class="form-control" id="refDireccion" aria-describedby="emailHelp" placeholder="Digite la direccion">
                         </div>
                         <div class="form-group">
-                            <label for="NumHijos">Num. Hijos</label>
-                            <input type="email" class="form-control" id="NumHijos" aria-describedby="emailHelp" placeholder="Cuantos Hijos tiene?">
+                            <label for="refTelefono">Telefono</label>
+                            <input type="email" class="form-control" id="refTelefono" aria-describedby="emailHelp" placeholder="Telefono">
+                            <input type="email" class="form-control" id="refTelefonoExt" aria-describedby="emailHelp" placeholder="Ext">
+                        </div>
+                        <div class="form-group">
+                            <label for="refTelefono2">Telefono 2</label>
+                            <input type="email" class="form-control" id="refTelefono2" aria-describedby="emailHelp" placeholder="Telefono 2">
+                            <input type="email" class="form-control" id="refTelefonoExt2" aria-describedby="emailHelp" placeholder="Ext">
+                        </div>
+                        <div class="form-group">
+                            <label for="refTelefono3">Telefono 3</label>
+                            <input type="email" class="form-control" id="refTelefono3" aria-describedby="emailHelp" placeholder="Telefono 3">
+                            <input type="email" class="form-control" id="refTelefonoExt3" aria-describedby="emailHelp" placeholder="Ext">
                         </div>
                         <button type="submit" class="btn btn-base pull-right">Guardar</button>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="panel panel-bd lobidrag">
+                                    <div class="panel-heading">
+                                        <div class="panel-title">
+                                            <h4>Referencias</h4>
+                                        </div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="table-responsive">
+                                            <table id="dataTableExample1" class="table table-bordered table-striped table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Position</th>
+                                                        <th>Office</th>
+                                                        <th>Age</th>
+                                                        <th>Start date</th>
+                                                        <th>Salary</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Tiger Nixon</td>
+                                                        <td>System Architect</td>
+                                                        <td>Edinburgh</td>
+                                                        <td>61</td>
+                                                        <td>2011/04/25</td>
+                                                        <td>$320,800</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Garrett Winters</td>
+                                                        <td>Accountant</td>
+                                                        <td>Tokyo</td>
+                                                        <td>63</td>
+                                                        <td>2011/07/25</td>
+                                                        <td>$170,750</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
             <div class="tab-pane fade" id="tabRedes">
                 <div class="panel-body">
                     <form>
-                        <div class="form-group">
-                            <label for="Identificacion">Identificacion</label>
-                            <input type="email" class="form-control" id="Identificacion" aria-describedby="emailHelp" placeholder="Digite la identificaion">
-                        </div>
-                        <div class="form-group">
-                            <label for="Nombres">Nombres</label>
-                            <input type="email" class="form-control" id="Nombres" aria-describedby="emailHelp" placeholder="Digite el nombre completo">
-                        </div>
-                        <div class="form-group">
-                            <label for="Identificacion">Apellidos</label>
-                            <input type="email" class="form-control" id="Apellidos" aria-describedby="emailHelp" placeholder="Digite los apellidos">
-                        </div>
-                        <div class="form-group">
-                            <label for="fechaNac">Fecha Nac</label>
-                            <input class="form-control" type="date" value="2011-08-19" id="fechaNac">
 
+                        <div class="form-group">
+                            <label for="crCorreo">Correo</label>
+                            <input type="email" class="form-control" id="crCorreo" aria-describedby="emailHelp" placeholder="Digite el correo">
                         </div>
                         <div class="form-group">
-                            <label for="Nacionalidad">Nacionalidad</label>
-                            <input type="email" class="form-control" id="Nacionalidad" aria-describedby="emailHelp" placeholder="Digite la nacionalidad">
-                        </div>
-
-                        <fieldset class="form-group">
-                            <legend>Genero</legend>
-                            <div>
-                                <label class="form-check-label">
-                                    <input type="radio" name="optionsRadios" id="optionsRadioFemenino" value="optionRadioFemenino" checked>
-                                    Femenino
-                                </label>
-                            </div>
-                            <div>
-                                <label class="form-check-label">
-                                    <input type="radio" name="optionsRadios" id="optionsRadioMasculino" value="optionRadioMasculino">
-                                    Masculino
-                                </label>
-                            </div>
-                        </fieldset>
-                        <div class="form-group">
-                            <label for="EstadoCivil">Estado Civil</label>
-                            <select class="form-control" id="EstadoCivil">
-                                <option>Casado</option>
-                                <option>Soltero</option>
+                            <label for="tipoRed">Tipo de Red</label>
+                            <select class="form-control" id="tipoRed">
+                                <option>Facebook</option>
+                                <option>Twitter</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="Profesion">Profesion</label>
-                            <input type="email" class="form-control" id="Profesion" aria-describedby="emailHelp" placeholder="Digite la profesion">
-                        </div>
-                        <div class="form-group">
-                            <label for="Apodo">Apodo</label>
-                            <input type="email" class="form-control" id="Apodo" aria-describedby="emailHelp" placeholder="Digite el apodo">
-                        </div>
-                        <div class="form-group">
-                            <label for="NumHijos">Num. Hijos</label>
-                            <input type="email" class="form-control" id="NumHijos" aria-describedby="emailHelp" placeholder="Cuantos Hijos tiene?">
+                            <label for="crUsuario">Usuario</label>
+                            <input type="email" class="form-control" id="crUsuario" aria-describedby="emailHelp" placeholder="Usuario de redes sociales">
                         </div>
                         <button type="submit" class="btn btn-base pull-right">Guardar</button>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="panel panel-bd lobidrag">
+                                    <div class="panel-heading">
+                                        <div class="panel-title">
+                                            <h4>Telefonos</h4>
+                                        </div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="table-responsive">
+                                            <table id="dataTableExample1" class="table table-bordered table-striped table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Position</th>
+                                                        <th>Office</th>
+                                                        <th>Age</th>
+                                                        <th>Start date</th>
+                                                        <th>Salary</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Tiger Nixon</td>
+                                                        <td>System Architect</td>
+                                                        <td>Edinburgh</td>
+                                                        <td>61</td>
+                                                        <td>2011/04/25</td>
+                                                        <td>$320,800</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Garrett Winters</td>
+                                                        <td>Accountant</td>
+                                                        <td>Tokyo</td>
+                                                        <td>63</td>
+                                                        <td>2011/07/25</td>
+                                                        <td>$170,750</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
