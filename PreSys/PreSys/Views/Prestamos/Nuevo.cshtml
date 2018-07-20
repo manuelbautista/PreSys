@@ -1,0 +1,122 @@
+﻿
+@{
+    ViewBag.Title = "Nuevo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content">
+    <div class="row">
+        <div class="form-inline">
+            <label>Buscar Por</label>
+            <div class="form-group addon-md input-left-icon">
+                <select class="form-control">
+                    <option>Select Option</option>
+                    <option>Sample</option>
+                    <option>Sample</option>
+                </select>
+
+            </div>
+            <div class="form-group input-group input-group-md">
+                <div class="icon-addon addon-md">
+                    <input type="text" placeholder="" class="form-control" id="5">
+                    <label class="ti-search" title="email"></label>
+                </div>
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Buscar</button>
+                </span>
+            </div>
+        </div>
+        <!-- Textual inputs -->
+        <br />
+        <!-- Form controls -->
+        <div class="col-sm-12">
+            <div class="panel panel-bd lobidrag">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <h4>Manuel Bautista - 001-1791726-0</h4>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="tipoPrestamo">Tipo Prestamo</label>
+                            <select class="form-control" id="tipoPrestamo">
+                                <option>Lineal</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fechaPrestamo">Fecha del Prestamo</label>
+                            <input class="form-control" type="date" value="2011-08-19T13:45:00" id="fechaPrestamo">
+                        </div>
+                        <div class="form-group">
+                            <label for="monto">Monto</label>
+                            <input class="form-control" type="number" value="0" id="monto">
+                        </div>
+                        <div class="form-group">
+                            <label>Tasa</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Digite la tasa del prestamo" aria-describedby="basic-addon2">
+                                <span class="input-group-addon" id="basic-addon2">%</span>
+                            </div><!-- /input-group -->
+                        </div>
+                        <div class="form-group">
+                            <label for="frecuencia">Frecuencia</label>
+                            <select class="form-control" id="frecuencia">
+                                <option>Mensual</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="monto">Cuotas</label>
+                            <input class="form-control" type="number" value="0" id="cuotas">
+                        </div>
+                        <div class="form-group">
+                            <label for="monto">Tramite</label>
+                            <input class="form-control" type="number" value="0" id="tramite">
+                        </div>
+                        <div class="form-inline">
+                            <div class="form-group"><label for="prestamo">Prestamo</label> <input class="form-control" disabled="disabled" id="prestamo" placeholder="0" type="text"></div>
+                            <div class="form-group"><label for="meses">Meses</label> <input class="form-control" disabled="disabled" id="meses" placeholder="0" type="email"></div>
+                            <div class="form-group"><label for="total">Total</label> <input class="form-control" disabled="disabled" id="total" placeholder="0" type="text"></div>
+                            <div class="form-group"><label for="ingreso">Ingreso</label> <input class="form-control" disabled="disabled" id="ingreso" placeholder="0" type="email"></div>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label for="monto">Dias Gracia</label>
+                            <input class="form-control" type="number" value="0" id="monto">
+                        </div>
+                        <div class="form-group">
+                            <label>% Moratoria Mensual</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="% Moratorio" aria-describedby="basic-addon3">
+                                <span class="input-group-addon" id="basic-addon3">%</span>
+                            </div><!-- /input-group -->
+                        </div>
+                        <div class="form-inline">
+                            <div class="form-group"><label for="prestamo">Mora Mensual</label> <input class="form-control" disabled="disabled" id="moraMensual" placeholder="0" type="text"></div>
+                            <div class="form-group"><label for="meses">Mora por Cuota</label> <input class="form-control" disabled="disabled" id="moraPorCuota" placeholder="0" type="email"></div>
+                        </div>
+                        <br/>
+                        <button type="button" class="btn btn-purple w-md m-rb-5">Calcular Prestamo</button>
+
+                        <button type="submit" class="btn btn-base pull-right">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+    // A $( document ).ready() block.
+    $( document ).ready(function() {
+        $("#prestamosLi").addClass( "active");
+    });
+</script>
