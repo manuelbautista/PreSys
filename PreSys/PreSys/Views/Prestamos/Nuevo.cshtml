@@ -4,6 +4,68 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="content">
+    <div class="modal fade modal-success" id="modal-clientes" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h1 class="modal-title">Clientes</h1>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="panel panel-bd lobidrag">
+                                <div class="panel-body">
+                                    <div class="table-responsive">
+                                        <table id="dataTableExample1" class="table table-bordered table-striped table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Position</th>
+                                                    <th>Office</th>
+                                                    <th>Age</th>
+                                                    <th>Start date</th>
+                                                    <th>Salary</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Tiger Nixon</td>
+                                                    <td>System Architect</td>
+                                                    <td>Edinburgh</td>
+                                                    <td>61</td>
+                                                    <td>2011/04/25</td>
+                                                    <td>$320,800</td>
+                                                    <td>
+                                                        <button class="btn btn-base btn-sm" data-toggle="tooltip" data-placement="left" title="Seleccionar"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Garrett Winters</td>
+                                                    <td>Accountant</td>
+                                                    <td>Tokyo</td>
+                                                    <td>63</td>
+                                                    <td>2011/07/25</td>
+                                                    <td>$170,750</td>
+                                                    <td>
+                                                        <button class="btn btn-base btn-sm" data-toggle="tooltip" data-placement="left" title="Seleccionar"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
     <div class="row">
         <div class="form-inline">
             <label>Buscar Por</label>
@@ -21,7 +83,7 @@
                     <label class="ti-search" title="email"></label>
                 </div>
                 <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">Buscar</button>
+                    <button class="btn btn-default" type="button" data-toggle="modal" data-target="#modal-clientes">Buscar</button>
                 </span>
             </div>
         </div>
@@ -103,9 +165,48 @@
                             <div class="form-group"><label for="prestamo">Mora Mensual</label> <input class="form-control" disabled="disabled" id="moraMensual" placeholder="0" type="text"></div>
                             <div class="form-group"><label for="meses">Mora por Cuota</label> <input class="form-control" disabled="disabled" id="moraPorCuota" placeholder="0" type="email"></div>
                         </div>
-                        <br/>
+                        <br />
                         <button type="button" class="btn btn-purple w-md m-rb-5">Calcular Prestamo</button>
-
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="panel panel-bd lobidrag">
+                                    <div class="panel-body">
+                                        <div class="table-responsive">
+                                            <table id="dataTableExample1" class="table table-bordered table-striped table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Position</th>
+                                                        <th>Office</th>
+                                                        <th>Age</th>
+                                                        <th>Start date</th>
+                                                        <th>Salary</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Tiger Nixon</td>
+                                                        <td>System Architect</td>
+                                                        <td>Edinburgh</td>
+                                                        <td>61</td>
+                                                        <td>2011/04/25</td>
+                                                        <td>$320,800</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Garrett Winters</td>
+                                                        <td>Accountant</td>
+                                                        <td>Tokyo</td>
+                                                        <td>63</td>
+                                                        <td>2011/07/25</td>
+                                                        <td>$170,750</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <button type="submit" class="btn btn-base pull-right">Guardar</button>
                     </form>
                 </div>
