@@ -5,6 +5,69 @@
 }
 
 <a href="/Prestamos/New" class="btn btn-primary w-md m-rb-5">Nuevo</a>
+<div class="modal fade modal-success" id="modal-deseembolso" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h1 class="modal-title">Deseembolso</h1>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel panel-bd lobidrag">
+                            <div class="panel-body">
+                                <p>
+                                    PrestamoID: <strong>0005</strong> <br/>
+                                    Cliente: <strong>Manuel Bautista</strong>
+                                </p>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="viadepago">Via de Pago</label>
+                                        <select class="form-control" id="viadepago">
+                                            <option>Cheque</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Referencia">Referencia</label>
+                                        <input type="email" class="form-control" id="Referencia" aria-describedby="emailHelp" placeholder="Referencia del deseembolso">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="viadepago">Banco</label>
+                                        <select class="form-control" id="banco">
+                                            <option>Popular</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="monto">Monto</label>
+                                        <input class="form-control" type="number" value="0" id="monto">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="comentario">Comentario</label>
+                                        <textarea class="form-control" id="comentario" rows="3"></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-base">Guardar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 <div class="row">
     <div class="col-sm-12">
         <div class="panel panel-bd lobidrag">
@@ -36,7 +99,8 @@
                                 <td>2011/04/25</td>
                                 <td>$320,800</td>
                                 <td>
-                                    <a href="/Prestamos/Edit/1" class="btn btn-base btn-sm" data-toggle="tooltip" data-placement="left" title="Update"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    <a href="/Prestamos/Edit/1" class="btn btn-base btn-sm" data-toggle="tooltip" data-placement="left" title="Ver"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    <a href="#" class="btn btn-purple btn-sm" data-toggle="tooltip" data-placement="left" title="Deseembolso"><i class="fa fa-bank" aria-hidden="true" data-toggle="modal" data-target="#modal-deseembolso"></i></a>
                                 </td>
                             </tr>
                             <tr>
@@ -47,7 +111,8 @@
                                 <td>2011/07/25</td>
                                 <td>$170,750</td>
                                 <td>
-                                    <a href="/Prestamos/Edit/1" class="btn btn-base btn-sm" data-toggle="tooltip" data-placement="left" title="Update"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    <a href="/Prestamos/Edit/1" class="btn btn-base btn-sm" data-toggle="tooltip" data-placement="left" title="Ver"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    <a href="#" class="btn btn-purple btn-sm" data-toggle="tooltip" data-placement="left" title="Deseembolso"><i class="fa fa-bank" aria-hidden="true" data-toggle="modal" data-target="#modal-deseembolso"></i></a>
                                 </td>
                             </tr>
                             <tr>
@@ -58,7 +123,8 @@
                                 <td>2009/01/12</td>
                                 <td>$86,000</td>
                                 <td>
-                                    <a href="/Prestamos/Edit/1" class="btn btn-base btn-sm" data-toggle="tooltip" data-placement="left" title="Update"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    <a href="/Prestamos/Edit/1" class="btn btn-base btn-sm" data-toggle="tooltip" data-placement="left" title="Ver"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    <a href="#" class="btn btn-purple btn-sm" data-toggle="tooltip" data-placement="left" title="Deseembolso"><i class="fa fa-bank" aria-hidden="true" data-toggle="modal" data-target="#modal-deseembolso"></i></a>
                                 </td>
                             </tr>
                             <tr>
@@ -69,7 +135,8 @@
                                 <td>2012/03/29</td>
                                 <td>$433,060</td>
                                 <td>
-                                    <a href="/Prestamos/Edit/1" class="btn btn-base btn-sm" data-toggle="tooltip" data-placement="left" title="Update"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    <a href="/Prestamos/Edit/1" class="btn btn-base btn-sm" data-toggle="tooltip" data-placement="left" title="Ver"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    <a href="#" class="btn btn-purple btn-sm" data-toggle="tooltip" data-placement="left" title="Deseembolso"><i class="fa fa-bank" aria-hidden="true" data-toggle="modal" data-target="#modal-deseembolso"></i></a>
                                 </td>
                             </tr>
                             <tr>
@@ -80,7 +147,8 @@
                                 <td>2008/11/28</td>
                                 <td>$162,700</td>
                                 <td>
-                                    <a href="/Prestamos/Edit/1" class="btn btn-base btn-sm" data-toggle="tooltip" data-placement="left" title="Update"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    <a href="/Prestamos/Edit/1" class="btn btn-base btn-sm" data-toggle="tooltip" data-placement="left" title="Ver"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    <a href="#" class="btn btn-purple btn-sm" data-toggle="tooltip" data-placement="left" title="Deseembolso"><i class="fa fa-bank" aria-hidden="true" data-toggle="modal" data-target="#modal-deseembolso"></i></a>
                                 </td>
                             </tr>
                             <tr>
@@ -91,7 +159,8 @@
                                 <td>2012/12/02</td>
                                 <td>$372,000</td>
                                 <td>
-                                    <a href="/Prestamos/Edit/1" class="btn btn-base btn-sm" data-toggle="tooltip" data-placement="left" title="Update"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    <a href="/Prestamos/Edit/1" class="btn btn-base btn-sm" data-toggle="tooltip" data-placement="left" title="Ver"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    <a href="#" class="btn btn-purple btn-sm" data-toggle="tooltip" data-placement="left" title="Deseembolso"><i class="fa fa-bank" aria-hidden="true" data-toggle="modal" data-target="#modal-deseembolso"></i></a>
                                 </td>
                             </tr>
                         </tbody>
@@ -108,7 +177,7 @@
 <script src="/assets/plugins/datatables/dataTables-active.js"></script>
 <script>
     // A $( document ).ready() block.
-    $( document ).ready(function() {
-        $("#prestamosLi").addClass( "active");
+    $(document).ready(function () {
+        $("#prestamosLi").addClass("active");
     });
 </script>
