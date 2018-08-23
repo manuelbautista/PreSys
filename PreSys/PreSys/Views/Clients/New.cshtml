@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="row">
+<div class="row" ng-app="presysClient" ng-controller="clientsController">
     <div>
         <!-- Nav tabs -->
         <ul class="nav nav-tabs">
@@ -15,66 +15,66 @@
             <div class="tab-pane fade in active" id="tabCliente">
                  <div class="panel-body">
 
-                                <form>
+                                <div>
                                     <div class="form-group">
                                         <label for="Identificacion">Identificacion</label>
-                                        <input type="email" class="form-control" id="Identificacion" aria-describedby="emailHelp" placeholder="Digite la identificaion">
+                                        <input type="text" class="form-control" id="Identificacion" aria-describedby="emailHelp" placeholder="Digite la identificaion" ng-model="Identificacion">
                                     </div>
                                     <div class="form-group">
                                         <label for="Nombres">Nombres</label>
-                                        <input type="email" class="form-control" id="Nombres" aria-describedby="emailHelp" placeholder="Digite el nombre completo">
+                                        <input type="text" class="form-control" id="Nombres" aria-describedby="emailHelp" placeholder="Digite el nombre completo" ng-model="Nombres">
                                     </div>
                                     <div class="form-group">
                                         <label for="Identificacion">Apellidos</label>
-                                        <input type="email" class="form-control" id="Apellidos" aria-describedby="emailHelp" placeholder="Digite los apellidos">
+                                        <input type="text" class="form-control" id="Apellidos" aria-describedby="emailHelp" placeholder="Digite los apellidos" ng-model="Apellidos">
                                     </div>
                                     <div class="form-group">
                                         <label for="fechaNac">Fecha Nac</label>
-                                        <input class="form-control" type="date" value="2011-08-19" id="fechaNac">
+                                        <input class="form-control" type="date" value="2011-08-19" id="fechaNac" ng-model="fechaNac">
 
                                     </div>
                                     <div class="form-group">
                                         <label for="Nacionalidad">Nacionalidad</label>
-                                        <input type="email" class="form-control" id="Nacionalidad" aria-describedby="emailHelp" placeholder="Digite la nacionalidad">
+                                        <input type="text" class="form-control" id="Nacionalidad" aria-describedby="emailHelp" placeholder="Digite la nacionalidad" ng-model="Nacionalidad">
                                     </div>
 
                                     <fieldset class="form-group">
                                         <legend>Genero</legend>
                                         <div>
                                             <label class="form-check-label">
-                                                <input type="radio" name="optionsRadios" id="optionsRadioFemenino" value="optionRadioFemenino" checked>
+                                                <input type="radio" name="optionsRadios" id="optionsRadioFemenino" value="optionRadioFemenino" ng-model="optionRadioFemenino" checked>
                                                 Femenino
                                             </label>
                                         </div>
                                         <div>
                                             <label class="form-check-label">
-                                                <input type="radio" name="optionsRadios" id="optionsRadioMasculino" value="optionRadioMasculino">
+                                                <input type="radio" name="optionsRadios" id="optionsRadioMasculino" ng-model="optionsRadioMasculino" value="optionRadioMasculino">
                                                 Masculino
                                             </label>
                                         </div>
                                     </fieldset>
                                     <div class="form-group">
                                         <label for="EstadoCivil">Estado Civil</label>
-                                        <select class="form-control" id="EstadoCivil">
-                                            <option>Casado</option>
-                                            <option>Soltero</option>
+                                        <select class="form-control" id="EstadoCivil" ng-model="EstadoCivil" ng-options="x for x in EstadosCiviles">
+                                            @*<option>Casado</option>
+                                            <option>Soltero</option>*@
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="Profesion">Profesion</label>
-                                        <input type="email" class="form-control" id="Profesion" aria-describedby="emailHelp" placeholder="Digite la profesion">
+                                        <input type="text" class="form-control" id="Profesion" aria-describedby="emailHelp" placeholder="Digite la profesion" ng-model="Profesion">
                                     </div>
                                     <div class="form-group">
                                         <label for="Apodo">Apodo</label>
-                                        <input type="email" class="form-control" id="Apodo" aria-describedby="emailHelp" placeholder="Digite el apodo">
+                                        <input type="text" class="form-control" id="Apodo" aria-describedby="emailHelp" placeholder="Digite el apodo" ng-model="Apodo">
                                     </div>
                                     <div class="form-group">
                                         <label for="numHijos">Cuantos hijos tienes?</label>
-                                        <input class="form-control" type="number" value="0" id="numHijos">
+                                        <input class="form-control" type="number"  id="numHijos" ng-model="numHijos">
                                   
                                     </div>
-                                    <button type="submit" class="btn btn-base pull-right">Guardar</button>
-                                </form>
+                                    <button  ng-click="saveClient()"  class="btn btn-base pull-right">Guardar</button>
+                                </div>
                             </div>
             </div>
         </div>

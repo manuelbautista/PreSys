@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="aa58ccc98f794d16b86c549038d316bf" Name="Diagram1">
+        <EntityTypeShape EntityType="PreSysModel.Banco" Width="1.5" PointX="8.25" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.Ciudad" Width="1.5" PointX="3" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.Cliente" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.Correo" Width="1.5" PointX="7.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.Cuota" Width="1.5" PointX="12.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.Direccion" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.DireccionTipo" Width="1.5" PointX="12.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.Empresa" Width="1.5" PointX="8.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.Estado" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.EstadoCivil" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.Gasto" Width="1.5" PointX="12.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.Genero" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.Identificacion" Width="1.5" PointX="0.75" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.IdentificacionTipo" Width="1.5" PointX="1.5" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.Log" Width="1.5" PointX="14.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.Mensaje" Width="1.5" PointX="13" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.Pago" Width="1.5" PointX="14.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.Prestamo" Width="1.5" PointX="8.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.PrestamoTipo" Width="1.5" PointX="6" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.Profesion" Width="1.5" PointX="0.75" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.Provincia" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.Referencia" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.ReferenciaTipo" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.Telefono" Width="1.5" PointX="10.5" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.TelefonoTipo" Width="1.5" PointX="8.25" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.Usuario" Width="1.5" PointX="10.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.UsuarioTipo" Width="1.5" PointX="14.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.ViaDesembolso" Width="1.5" PointX="10.5" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.ViaPago" Width="1.5" PointX="10.5" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSysModel.ViaTipo" Width="1.5" PointX="8.25" PointY="18.75" IsExpanded="true" />
+        <AssociationConnector Association="PreSysModel.FK_ViaDesembolso_Bancos" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_ViaPago_Bancos" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_Direccion_Ciudad" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_Cliente_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_Cliente_Estado" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_Cliente_EstadoCivil" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_Cliente_Genero" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_Cliente_Identificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_Cliente_Profesion" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_Direccion_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_Prestamos_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_Referencia_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_Telefono_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_Direccion_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_Direccion_Provincia" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_Direccion_Referencia" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_Telefono_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_ViaDesembolso_Estado" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_Identificacion_IdentificacionTipo" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_Mensajes_UsuarioFrom" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_Mensajes_UsuarioTo" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_Prestamos_PrestamoTipo" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_ViaDesembolso_Prestamos" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_Referencia_ReferenciaTipo" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_Telefono_Referencia" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_Telefono_TelefonoTipo" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_ViaDesembolso_ViaTipo" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_ViaPago_TipoViaPago" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSysModel.FK_ViaPago_ViaPago" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

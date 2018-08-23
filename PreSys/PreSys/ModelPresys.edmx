@@ -1,0 +1,2052 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PreSysModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Bancos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Banco" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Ciudad">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ciudad" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Identificacion" Type="int" />
+          <Property Name="Nombres" Type="nchar" MaxLength="100" />
+          <Property Name="Apellidos" Type="nchar" MaxLength="100" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="FechaNacimiento" Type="datetime" />
+          <Property Name="Nacionalidad" Type="nchar" MaxLength="50" />
+          <Property Name="Genero" Type="int" />
+          <Property Name="EstadoCivil" Type="int" />
+          <Property Name="Profesion" Type="int" />
+          <Property Name="EstadoId" Type="int" />
+          <Property Name="Apodo" Type="nchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Correo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClienteId" Type="int" />
+          <Property Name="Correo" Type="nchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="Cuotas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PrestamoId" Type="int" />
+          <Property Name="Numero" Type="int" />
+          <Property Name="Monto" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Capital" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Interes" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Mora" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Costo" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="Estado" Type="int" />
+        </EntityType>
+        <EntityType Name="Direccion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClienteId" Type="int" />
+          <Property Name="EmpresaId" Type="int" />
+          <Property Name="ReferenciaId" Type="int" />
+          <Property Name="TipoDireccion" Type="int" />
+          <Property Name="Calle" Type="nchar" MaxLength="50" />
+          <Property Name="Esquina" Type="nchar" MaxLength="50" />
+          <Property Name="Numero" Type="nchar" MaxLength="20" />
+          <Property Name="Edificio" Type="nchar" MaxLength="50" />
+          <Property Name="Residencial" Type="nchar" MaxLength="50" />
+          <Property Name="Piso" Type="nchar" MaxLength="20" />
+          <Property Name="Apartamento" Type="nchar" MaxLength="20" />
+          <Property Name="Color" Type="nchar" MaxLength="20" />
+          <Property Name="Urbanizacion" Type="nchar" MaxLength="50" />
+          <Property Name="CiudadId" Type="int" />
+          <Property Name="RefCercana" Type="nvarchar(max)" />
+          <Property Name="ProvinciaId" Type="int" />
+        </EntityType>
+        <EntityType Name="DireccionTipo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tipo" Type="nchar" MaxLength="12" />
+        </EntityType>
+        <EntityType Name="Empresa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClienteId" Type="int" />
+          <Property Name="Empresa" Type="nchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Estado">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Estado" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="EstadoCivil">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EstadoCivil" Type="nchar" MaxLength="18" />
+        </EntityType>
+        <EntityType Name="Gastos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TipoGastoId" Type="int" />
+          <Property Name="CuotaId" Type="int" />
+          <Property Name="Monto" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Descripcion" Type="nvarchar(max)" />
+          <Property Name="Fecha" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Genero">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Genero" Type="nchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Identificacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TipoIdentificacion" Type="int" />
+          <Property Name="Identificacion" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="IdentificacionTipo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Identificacion" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Logs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Usuario" Type="int" />
+          <Property Name="Accion" Type="nvarchar(max)" />
+          <Property Name="fecha" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Mensajes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserFrom" Type="int" />
+          <Property Name="UserTo" Type="int" />
+          <Property Name="Mensaje" Type="nvarchar(max)" />
+          <Property Name="Fecha" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Pagos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CuotaId" Type="int" />
+          <Property Name="PrestamoId" Type="int" />
+          <Property Name="Monto" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Capital" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Interes" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Mora" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Costo" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Total" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="CuotasPagadas" Type="int" />
+          <Property Name="CuotasPendientes" Type="int" />
+          <Property Name="Estado" Type="int" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="ViaPagoId" Type="int" />
+          <Property Name="UsuarioId" Type="int" />
+        </EntityType>
+        <EntityType Name="Prestamos">
+          <Key>
+            <PropertyRef Name="PrestamoId" />
+          </Key>
+          <Property Name="PrestamoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClienteId" Type="int" />
+          <Property Name="TipoPrestamoId" Type="int" />
+          <Property Name="FechaApertura" Type="datetime" />
+          <Property Name="FechaTermino" Type="datetime" />
+          <Property Name="Frecuencia" Type="int" />
+          <Property Name="MontoPrestamo" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Tasa" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Cuota" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="CantCuotas" Type="int" />
+          <Property Name="Capital" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Interes" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="BalanceCorriente" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="BalanceTermino" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="MontoAtraso" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="CuotasAtrasadas" Type="int" />
+          <Property Name="FechaultimoPago" Type="datetime" />
+          <Property Name="MontoUltimoPago" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="EstadoCuenta" Type="int" />
+        </EntityType>
+        <EntityType Name="PrestamoTipo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TipoPrestamo" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Profesion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Profesion" Type="nchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Provincia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Provincia" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Referencia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClienteId" Type="int" />
+          <Property Name="TipoReferencia" Type="int" />
+          <Property Name="Referencia" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ReferenciaTipo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Referencia" Type="nchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Telefono">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClienteId" Type="int" />
+          <Property Name="EmpresaId" Type="int" />
+          <Property Name="ReferenciaId" Type="int" />
+          <Property Name="TipoTelefono" Type="int" />
+          <Property Name="Telefono" Type="nchar" MaxLength="15" />
+          <Property Name="Extension" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="TelefonoTipo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TipoTelefono" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Usuario" Type="nvarchar" MaxLength="50" />
+          <Property Name="Clave" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TipoUsuario" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+          <Property Name="UltimoLogin" Type="datetime" />
+          <Property Name="Fecha" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UsuarioTipo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TipoUsuario" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ViaDesembolso">
+          <Key>
+            <PropertyRef Name="DesembolsoId" />
+          </Key>
+          <Property Name="DesembolsoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BancoId" Type="int" />
+          <Property Name="ViaTipoId" Type="int" />
+          <Property Name="Referencia" Type="nvarchar" MaxLength="50" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="70" />
+          <Property Name="MontoDesembolso" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="EstadoId" Type="int" />
+          <Property Name="PrestamoId" Type="int" />
+        </EntityType>
+        <EntityType Name="ViaPago">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BancoId" Type="int" />
+          <Property Name="ViaTipoID" Type="int" />
+          <Property Name="Descripcion" Type="nchar" MaxLength="70" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="Estado" Type="int" />
+          <Property Name="Referencia" Type="nvarchar" MaxLength="50" />
+          <Property Name="MontoPago" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="ViaTipo">
+          <Key>
+            <PropertyRef Name="ViaTipoId" />
+          </Key>
+          <Property Name="ViaTipoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TipoPago" Type="nchar" MaxLength="60" />
+        </EntityType>
+        <Association Name="FK_Cliente_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Cliente1" Type="Self.Cliente" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cliente1">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Estado">
+          <End Role="Estado" Type="Self.Estado" Multiplicity="0..1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estado">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="EstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_EstadoCivil">
+          <End Role="EstadoCivil" Type="Self.EstadoCivil" Multiplicity="0..1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoCivil">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="EstadoCivil" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Genero">
+          <End Role="Genero" Type="Self.Genero" Multiplicity="0..1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genero">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="Genero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Identificacion">
+          <End Role="Identificacion" Type="Self.Identificacion" Multiplicity="0..1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Identificacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="Identificacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Profesion">
+          <End Role="Profesion" Type="Self.Profesion" Multiplicity="0..1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profesion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="Profesion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Direccion_Ciudad">
+          <End Role="Ciudad" Type="Self.Ciudad" Multiplicity="0..1" />
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ciudad">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Direccion">
+              <PropertyRef Name="CiudadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Direccion_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Direccion">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Direccion_Empresa">
+          <End Role="Empresa" Type="Self.Empresa" Multiplicity="0..1" />
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresa">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Direccion">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Direccion_Provincia">
+          <End Role="Provincia" Type="Self.Provincia" Multiplicity="0..1" />
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provincia">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Direccion">
+              <PropertyRef Name="ProvinciaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Direccion_Referencia">
+          <End Role="Referencia" Type="Self.Referencia" Multiplicity="0..1" />
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Referencia">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Direccion">
+              <PropertyRef Name="ReferenciaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Identificacion_IdentificacionTipo">
+          <End Role="IdentificacionTipo" Type="Self.IdentificacionTipo" Multiplicity="0..1" />
+          <End Role="Identificacion" Type="Self.Identificacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IdentificacionTipo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Identificacion">
+              <PropertyRef Name="TipoIdentificacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mensajes_UsuarioFrom">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Mensajes" Type="Self.Mensajes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Mensajes">
+              <PropertyRef Name="UserFrom" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mensajes_UsuarioTo">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Mensajes" Type="Self.Mensajes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Mensajes">
+              <PropertyRef Name="UserTo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prestamos_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+          <End Role="Prestamos" Type="Self.Prestamos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Prestamos">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prestamos_PrestamoTipo">
+          <End Role="PrestamoTipo" Type="Self.PrestamoTipo" Multiplicity="0..1" />
+          <End Role="Prestamos" Type="Self.Prestamos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PrestamoTipo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Prestamos">
+              <PropertyRef Name="TipoPrestamoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Referencia_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+          <End Role="Referencia" Type="Self.Referencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Referencia">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Referencia_ReferenciaTipo">
+          <End Role="ReferenciaTipo" Type="Self.ReferenciaTipo" Multiplicity="0..1" />
+          <End Role="Referencia" Type="Self.Referencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReferenciaTipo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Referencia">
+              <PropertyRef Name="TipoReferencia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Telefono_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+          <End Role="Telefono" Type="Self.Telefono" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Telefono">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Telefono_Empresa">
+          <End Role="Empresa" Type="Self.Empresa" Multiplicity="0..1" />
+          <End Role="Telefono" Type="Self.Telefono" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresa">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Telefono">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Telefono_Referencia">
+          <End Role="Referencia" Type="Self.Referencia" Multiplicity="0..1" />
+          <End Role="Telefono" Type="Self.Telefono" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Referencia">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Telefono">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Telefono_TelefonoTipo">
+          <End Role="TelefonoTipo" Type="Self.TelefonoTipo" Multiplicity="0..1" />
+          <End Role="Telefono" Type="Self.Telefono" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TelefonoTipo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Telefono">
+              <PropertyRef Name="TipoTelefono" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ViaDesembolso_Bancos">
+          <End Role="Bancos" Type="Self.Bancos" Multiplicity="0..1" />
+          <End Role="ViaDesembolso" Type="Self.ViaDesembolso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bancos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ViaDesembolso">
+              <PropertyRef Name="BancoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ViaDesembolso_Estado">
+          <End Role="Estado" Type="Self.Estado" Multiplicity="0..1" />
+          <End Role="ViaDesembolso" Type="Self.ViaDesembolso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estado">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ViaDesembolso">
+              <PropertyRef Name="EstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ViaDesembolso_Prestamos">
+          <End Role="Prestamos" Type="Self.Prestamos" Multiplicity="0..1" />
+          <End Role="ViaDesembolso" Type="Self.ViaDesembolso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prestamos">
+              <PropertyRef Name="PrestamoId" />
+            </Principal>
+            <Dependent Role="ViaDesembolso">
+              <PropertyRef Name="PrestamoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ViaDesembolso_ViaTipo">
+          <End Role="ViaTipo" Type="Self.ViaTipo" Multiplicity="0..1" />
+          <End Role="ViaDesembolso" Type="Self.ViaDesembolso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ViaTipo">
+              <PropertyRef Name="ViaTipoId" />
+            </Principal>
+            <Dependent Role="ViaDesembolso">
+              <PropertyRef Name="ViaTipoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ViaPago_Bancos">
+          <End Role="Bancos" Type="Self.Bancos" Multiplicity="0..1" />
+          <End Role="ViaPago" Type="Self.ViaPago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bancos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ViaPago">
+              <PropertyRef Name="BancoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ViaPago_TipoViaPago">
+          <End Role="ViaTipo" Type="Self.ViaTipo" Multiplicity="0..1" />
+          <End Role="ViaPago" Type="Self.ViaPago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ViaTipo">
+              <PropertyRef Name="ViaTipoId" />
+            </Principal>
+            <Dependent Role="ViaPago">
+              <PropertyRef Name="ViaTipoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ViaPago_ViaPago">
+          <End Role="ViaPago" Type="Self.ViaPago" Multiplicity="1" />
+          <End Role="ViaPago1" Type="Self.ViaPago" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ViaPago">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ViaPago1">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PreSysModelStoreContainer">
+          <EntitySet Name="Bancos" EntityType="Self.Bancos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ciudad" EntityType="Self.Ciudad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Correo" EntityType="Self.Correo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cuotas" EntityType="Self.Cuotas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Direccion" EntityType="Self.Direccion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DireccionTipo" EntityType="Self.DireccionTipo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empresa" EntityType="Self.Empresa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Estado" EntityType="Self.Estado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EstadoCivil" EntityType="Self.EstadoCivil" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gastos" EntityType="Self.Gastos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Genero" EntityType="Self.Genero" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Identificacion" EntityType="Self.Identificacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IdentificacionTipo" EntityType="Self.IdentificacionTipo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Logs" EntityType="Self.Logs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mensajes" EntityType="Self.Mensajes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pagos" EntityType="Self.Pagos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prestamos" EntityType="Self.Prestamos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PrestamoTipo" EntityType="Self.PrestamoTipo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Profesion" EntityType="Self.Profesion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Provincia" EntityType="Self.Provincia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Referencia" EntityType="Self.Referencia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReferenciaTipo" EntityType="Self.ReferenciaTipo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Telefono" EntityType="Self.Telefono" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TelefonoTipo" EntityType="Self.TelefonoTipo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsuarioTipo" EntityType="Self.UsuarioTipo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ViaDesembolso" EntityType="Self.ViaDesembolso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ViaPago" EntityType="Self.ViaPago" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ViaTipo" EntityType="Self.ViaTipo" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Cliente_Cliente" Association="Self.FK_Cliente_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Cliente1" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Estado" Association="Self.FK_Cliente_Estado">
+            <End Role="Estado" EntitySet="Estado" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_EstadoCivil" Association="Self.FK_Cliente_EstadoCivil">
+            <End Role="EstadoCivil" EntitySet="EstadoCivil" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Genero" Association="Self.FK_Cliente_Genero">
+            <End Role="Genero" EntitySet="Genero" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Identificacion" Association="Self.FK_Cliente_Identificacion">
+            <End Role="Identificacion" EntitySet="Identificacion" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Profesion" Association="Self.FK_Cliente_Profesion">
+            <End Role="Profesion" EntitySet="Profesion" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Direccion_Ciudad" Association="Self.FK_Direccion_Ciudad">
+            <End Role="Ciudad" EntitySet="Ciudad" />
+            <End Role="Direccion" EntitySet="Direccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Direccion_Cliente" Association="Self.FK_Direccion_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Direccion" EntitySet="Direccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Direccion_Empresa" Association="Self.FK_Direccion_Empresa">
+            <End Role="Empresa" EntitySet="Empresa" />
+            <End Role="Direccion" EntitySet="Direccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Direccion_Provincia" Association="Self.FK_Direccion_Provincia">
+            <End Role="Provincia" EntitySet="Provincia" />
+            <End Role="Direccion" EntitySet="Direccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Direccion_Referencia" Association="Self.FK_Direccion_Referencia">
+            <End Role="Referencia" EntitySet="Referencia" />
+            <End Role="Direccion" EntitySet="Direccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Identificacion_IdentificacionTipo" Association="Self.FK_Identificacion_IdentificacionTipo">
+            <End Role="IdentificacionTipo" EntitySet="IdentificacionTipo" />
+            <End Role="Identificacion" EntitySet="Identificacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mensajes_UsuarioFrom" Association="Self.FK_Mensajes_UsuarioFrom">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Mensajes" EntitySet="Mensajes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mensajes_UsuarioTo" Association="Self.FK_Mensajes_UsuarioTo">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Mensajes" EntitySet="Mensajes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prestamos_Cliente" Association="Self.FK_Prestamos_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Prestamos" EntitySet="Prestamos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prestamos_PrestamoTipo" Association="Self.FK_Prestamos_PrestamoTipo">
+            <End Role="PrestamoTipo" EntitySet="PrestamoTipo" />
+            <End Role="Prestamos" EntitySet="Prestamos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Referencia_Cliente" Association="Self.FK_Referencia_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Referencia" EntitySet="Referencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Referencia_ReferenciaTipo" Association="Self.FK_Referencia_ReferenciaTipo">
+            <End Role="ReferenciaTipo" EntitySet="ReferenciaTipo" />
+            <End Role="Referencia" EntitySet="Referencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Telefono_Cliente" Association="Self.FK_Telefono_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Telefono" EntitySet="Telefono" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Telefono_Empresa" Association="Self.FK_Telefono_Empresa">
+            <End Role="Empresa" EntitySet="Empresa" />
+            <End Role="Telefono" EntitySet="Telefono" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Telefono_Referencia" Association="Self.FK_Telefono_Referencia">
+            <End Role="Referencia" EntitySet="Referencia" />
+            <End Role="Telefono" EntitySet="Telefono" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Telefono_TelefonoTipo" Association="Self.FK_Telefono_TelefonoTipo">
+            <End Role="TelefonoTipo" EntitySet="TelefonoTipo" />
+            <End Role="Telefono" EntitySet="Telefono" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ViaDesembolso_Bancos" Association="Self.FK_ViaDesembolso_Bancos">
+            <End Role="Bancos" EntitySet="Bancos" />
+            <End Role="ViaDesembolso" EntitySet="ViaDesembolso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ViaDesembolso_Estado" Association="Self.FK_ViaDesembolso_Estado">
+            <End Role="Estado" EntitySet="Estado" />
+            <End Role="ViaDesembolso" EntitySet="ViaDesembolso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ViaDesembolso_Prestamos" Association="Self.FK_ViaDesembolso_Prestamos">
+            <End Role="Prestamos" EntitySet="Prestamos" />
+            <End Role="ViaDesembolso" EntitySet="ViaDesembolso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ViaDesembolso_ViaTipo" Association="Self.FK_ViaDesembolso_ViaTipo">
+            <End Role="ViaTipo" EntitySet="ViaTipo" />
+            <End Role="ViaDesembolso" EntitySet="ViaDesembolso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ViaPago_Bancos" Association="Self.FK_ViaPago_Bancos">
+            <End Role="Bancos" EntitySet="Bancos" />
+            <End Role="ViaPago" EntitySet="ViaPago" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ViaPago_TipoViaPago" Association="Self.FK_ViaPago_TipoViaPago">
+            <End Role="ViaTipo" EntitySet="ViaTipo" />
+            <End Role="ViaPago" EntitySet="ViaPago" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ViaPago_ViaPago" Association="Self.FK_ViaPago_ViaPago">
+            <End Role="ViaPago" EntitySet="ViaPago" />
+            <End Role="ViaPago1" EntitySet="ViaPago" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PreSysModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Banco">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Banco1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ViaDesembolsoes" Relationship="Self.FK_ViaDesembolso_Bancos" FromRole="Bancos" ToRole="ViaDesembolso" />
+          <NavigationProperty Name="ViaPagoes" Relationship="Self.FK_ViaPago_Bancos" FromRole="Bancos" ToRole="ViaPago" />
+        </EntityType>
+        <EntityType Name="Ciudad">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ciudad1" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Direccions" Relationship="Self.FK_Direccion_Ciudad" FromRole="Ciudad" ToRole="Direccion" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Identificacion" Type="Int32" />
+          <Property Name="Nombres" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Apellidos" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="FechaNacimiento" Type="DateTime" Precision="3" />
+          <Property Name="Nacionalidad" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Genero" Type="Int32" />
+          <Property Name="EstadoCivil" Type="Int32" />
+          <Property Name="Profesion" Type="Int32" />
+          <Property Name="EstadoId" Type="Int32" />
+          <Property Name="Apodo" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Cliente1" Relationship="Self.FK_Cliente_Cliente" FromRole="Cliente" ToRole="Cliente1" />
+          <NavigationProperty Name="Cliente2" Relationship="Self.FK_Cliente_Cliente" FromRole="Cliente1" ToRole="Cliente" />
+          <NavigationProperty Name="Estado" Relationship="Self.FK_Cliente_Estado" FromRole="Cliente" ToRole="Estado" />
+          <NavigationProperty Name="EstadoCivil1" Relationship="Self.FK_Cliente_EstadoCivil" FromRole="Cliente" ToRole="EstadoCivil" />
+          <NavigationProperty Name="Genero1" Relationship="Self.FK_Cliente_Genero" FromRole="Cliente" ToRole="Genero" />
+          <NavigationProperty Name="Identificacion1" Relationship="Self.FK_Cliente_Identificacion" FromRole="Cliente" ToRole="Identificacion" />
+          <NavigationProperty Name="Profesion1" Relationship="Self.FK_Cliente_Profesion" FromRole="Cliente" ToRole="Profesion" />
+          <NavigationProperty Name="Direccions" Relationship="Self.FK_Direccion_Cliente" FromRole="Cliente" ToRole="Direccion" />
+          <NavigationProperty Name="Prestamos" Relationship="Self.FK_Prestamos_Cliente" FromRole="Cliente" ToRole="Prestamos" />
+          <NavigationProperty Name="Referencias" Relationship="Self.FK_Referencia_Cliente" FromRole="Cliente" ToRole="Referencia" />
+          <NavigationProperty Name="Telefonoes" Relationship="Self.FK_Telefono_Cliente" FromRole="Cliente" ToRole="Telefono" />
+        </EntityType>
+        <EntityType Name="Correo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClienteId" Type="Int32" />
+          <Property Name="Correo1" Type="String" MaxLength="60" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Cuota">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PrestamoId" Type="Int32" />
+          <Property Name="Numero" Type="Int32" />
+          <Property Name="Monto" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Capital" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Interes" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Mora" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Costo" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="Estado" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Direccion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClienteId" Type="Int32" />
+          <Property Name="EmpresaId" Type="Int32" />
+          <Property Name="ReferenciaId" Type="Int32" />
+          <Property Name="TipoDireccion" Type="Int32" />
+          <Property Name="Calle" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Esquina" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Numero" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Edificio" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Residencial" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Piso" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Apartamento" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Color" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Urbanizacion" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="CiudadId" Type="Int32" />
+          <Property Name="RefCercana" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProvinciaId" Type="Int32" />
+          <NavigationProperty Name="Ciudad" Relationship="Self.FK_Direccion_Ciudad" FromRole="Direccion" ToRole="Ciudad" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK_Direccion_Cliente" FromRole="Direccion" ToRole="Cliente" />
+          <NavigationProperty Name="Empresa" Relationship="Self.FK_Direccion_Empresa" FromRole="Direccion" ToRole="Empresa" />
+          <NavigationProperty Name="Provincia" Relationship="Self.FK_Direccion_Provincia" FromRole="Direccion" ToRole="Provincia" />
+          <NavigationProperty Name="Referencia" Relationship="Self.FK_Direccion_Referencia" FromRole="Direccion" ToRole="Referencia" />
+        </EntityType>
+        <EntityType Name="DireccionTipo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tipo" Type="String" MaxLength="12" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Empresa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClienteId" Type="Int32" />
+          <Property Name="Empresa1" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Direccions" Relationship="Self.FK_Direccion_Empresa" FromRole="Empresa" ToRole="Direccion" />
+          <NavigationProperty Name="Telefonoes" Relationship="Self.FK_Telefono_Empresa" FromRole="Empresa" ToRole="Telefono" />
+        </EntityType>
+        <EntityType Name="Estado">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Estado1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Clientes" Relationship="Self.FK_Cliente_Estado" FromRole="Estado" ToRole="Cliente" />
+          <NavigationProperty Name="ViaDesembolsoes" Relationship="Self.FK_ViaDesembolso_Estado" FromRole="Estado" ToRole="ViaDesembolso" />
+        </EntityType>
+        <EntityType Name="EstadoCivil">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EstadoCivil1" Type="String" MaxLength="18" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Clientes" Relationship="Self.FK_Cliente_EstadoCivil" FromRole="EstadoCivil" ToRole="Cliente" />
+        </EntityType>
+        <EntityType Name="Gasto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoGastoId" Type="Int32" />
+          <Property Name="CuotaId" Type="Int32" />
+          <Property Name="Monto" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Genero">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Genero1" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Clientes" Relationship="Self.FK_Cliente_Genero" FromRole="Genero" ToRole="Cliente" />
+        </EntityType>
+        <EntityType Name="Identificacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoIdentificacion" Type="Int32" />
+          <Property Name="Identificacion1" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Clientes" Relationship="Self.FK_Cliente_Identificacion" FromRole="Identificacion" ToRole="Cliente" />
+          <NavigationProperty Name="IdentificacionTipo" Relationship="Self.FK_Identificacion_IdentificacionTipo" FromRole="Identificacion" ToRole="IdentificacionTipo" />
+        </EntityType>
+        <EntityType Name="IdentificacionTipo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Identificacion" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Identificacions" Relationship="Self.FK_Identificacion_IdentificacionTipo" FromRole="IdentificacionTipo" ToRole="Identificacion" />
+        </EntityType>
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Usuario" Type="Int32" />
+          <Property Name="Accion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Mensaje">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserFrom" Type="Int32" />
+          <Property Name="UserTo" Type="Int32" />
+          <Property Name="Mensaje1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK_Mensajes_UsuarioFrom" FromRole="Mensajes" ToRole="Usuario" />
+          <NavigationProperty Name="Usuario1" Relationship="Self.FK_Mensajes_UsuarioTo" FromRole="Mensajes" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Pago">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CuotaId" Type="Int32" />
+          <Property Name="PrestamoId" Type="Int32" />
+          <Property Name="Monto" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Capital" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Interes" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Mora" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Costo" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Total" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CuotasPagadas" Type="Int32" />
+          <Property Name="CuotasPendientes" Type="Int32" />
+          <Property Name="Estado" Type="Int32" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="ViaPagoId" Type="Int32" />
+          <Property Name="UsuarioId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Prestamo">
+          <Key>
+            <PropertyRef Name="PrestamoId" />
+          </Key>
+          <Property Name="PrestamoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClienteId" Type="Int32" />
+          <Property Name="TipoPrestamoId" Type="Int32" />
+          <Property Name="FechaApertura" Type="DateTime" Precision="3" />
+          <Property Name="FechaTermino" Type="DateTime" Precision="3" />
+          <Property Name="Frecuencia" Type="Int32" />
+          <Property Name="MontoPrestamo" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Tasa" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Cuota" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CantCuotas" Type="Int32" />
+          <Property Name="Capital" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Interes" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="BalanceCorriente" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="BalanceTermino" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MontoAtraso" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CuotasAtrasadas" Type="Int32" />
+          <Property Name="FechaultimoPago" Type="DateTime" Precision="3" />
+          <Property Name="MontoUltimoPago" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EstadoCuenta" Type="Int32" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK_Prestamos_Cliente" FromRole="Prestamos" ToRole="Cliente" />
+          <NavigationProperty Name="PrestamoTipo" Relationship="Self.FK_Prestamos_PrestamoTipo" FromRole="Prestamos" ToRole="PrestamoTipo" />
+          <NavigationProperty Name="ViaDesembolsoes" Relationship="Self.FK_ViaDesembolso_Prestamos" FromRole="Prestamos" ToRole="ViaDesembolso" />
+        </EntityType>
+        <EntityType Name="PrestamoTipo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoPrestamo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Prestamos" Relationship="Self.FK_Prestamos_PrestamoTipo" FromRole="PrestamoTipo" ToRole="Prestamos" />
+        </EntityType>
+        <EntityType Name="Profesion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Profesion1" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Clientes" Relationship="Self.FK_Cliente_Profesion" FromRole="Profesion" ToRole="Cliente" />
+        </EntityType>
+        <EntityType Name="Provincia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Provincia1" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Direccions" Relationship="Self.FK_Direccion_Provincia" FromRole="Provincia" ToRole="Direccion" />
+        </EntityType>
+        <EntityType Name="Referencia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClienteId" Type="Int32" />
+          <Property Name="TipoReferencia" Type="Int32" />
+          <Property Name="Referencia1" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK_Referencia_Cliente" FromRole="Referencia" ToRole="Cliente" />
+          <NavigationProperty Name="Direccions" Relationship="Self.FK_Direccion_Referencia" FromRole="Referencia" ToRole="Direccion" />
+          <NavigationProperty Name="ReferenciaTipo" Relationship="Self.FK_Referencia_ReferenciaTipo" FromRole="Referencia" ToRole="ReferenciaTipo" />
+          <NavigationProperty Name="Telefonoes" Relationship="Self.FK_Telefono_Referencia" FromRole="Referencia" ToRole="Telefono" />
+        </EntityType>
+        <EntityType Name="ReferenciaTipo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Referencia" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Referencias" Relationship="Self.FK_Referencia_ReferenciaTipo" FromRole="ReferenciaTipo" ToRole="Referencia" />
+        </EntityType>
+        <EntityType Name="Telefono">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClienteId" Type="Int32" />
+          <Property Name="EmpresaId" Type="Int32" />
+          <Property Name="ReferenciaId" Type="Int32" />
+          <Property Name="TipoTelefono" Type="Int32" />
+          <Property Name="Telefono1" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="Extension" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK_Telefono_Cliente" FromRole="Telefono" ToRole="Cliente" />
+          <NavigationProperty Name="Empresa" Relationship="Self.FK_Telefono_Empresa" FromRole="Telefono" ToRole="Empresa" />
+          <NavigationProperty Name="Referencia" Relationship="Self.FK_Telefono_Referencia" FromRole="Telefono" ToRole="Referencia" />
+          <NavigationProperty Name="TelefonoTipo" Relationship="Self.FK_Telefono_TelefonoTipo" FromRole="Telefono" ToRole="TelefonoTipo" />
+        </EntityType>
+        <EntityType Name="TelefonoTipo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoTelefono" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Telefonoes" Relationship="Self.FK_Telefono_TelefonoTipo" FromRole="TelefonoTipo" ToRole="Telefono" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Usuario1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Clave" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TipoUsuario" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <Property Name="UltimoLogin" Type="DateTime" Precision="3" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Mensajes" Relationship="Self.FK_Mensajes_UsuarioFrom" FromRole="Usuario" ToRole="Mensajes" />
+          <NavigationProperty Name="Mensajes1" Relationship="Self.FK_Mensajes_UsuarioTo" FromRole="Usuario" ToRole="Mensajes" />
+        </EntityType>
+        <EntityType Name="UsuarioTipo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ViaDesembolso">
+          <Key>
+            <PropertyRef Name="DesembolsoId" />
+          </Key>
+          <Property Name="DesembolsoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BancoId" Type="Int32" />
+          <Property Name="ViaTipoId" Type="Int32" />
+          <Property Name="Referencia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Descripcion" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="MontoDesembolso" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="EstadoId" Type="Int32" />
+          <Property Name="PrestamoId" Type="Int32" />
+          <NavigationProperty Name="Banco" Relationship="Self.FK_ViaDesembolso_Bancos" FromRole="ViaDesembolso" ToRole="Bancos" />
+          <NavigationProperty Name="Estado" Relationship="Self.FK_ViaDesembolso_Estado" FromRole="ViaDesembolso" ToRole="Estado" />
+          <NavigationProperty Name="Prestamo" Relationship="Self.FK_ViaDesembolso_Prestamos" FromRole="ViaDesembolso" ToRole="Prestamos" />
+          <NavigationProperty Name="ViaTipo" Relationship="Self.FK_ViaDesembolso_ViaTipo" FromRole="ViaDesembolso" ToRole="ViaTipo" />
+        </EntityType>
+        <EntityType Name="ViaPago">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BancoId" Type="Int32" />
+          <Property Name="ViaTipoID" Type="Int32" />
+          <Property Name="Descripcion" Type="String" MaxLength="70" FixedLength="true" Unicode="true" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="Estado" Type="Int32" />
+          <Property Name="Referencia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MontoPago" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="Banco" Relationship="Self.FK_ViaPago_Bancos" FromRole="ViaPago" ToRole="Bancos" />
+          <NavigationProperty Name="ViaTipo" Relationship="Self.FK_ViaPago_TipoViaPago" FromRole="ViaPago" ToRole="ViaTipo" />
+          <NavigationProperty Name="ViaPago1" Relationship="Self.FK_ViaPago_ViaPago" FromRole="ViaPago" ToRole="ViaPago1" />
+          <NavigationProperty Name="ViaPago2" Relationship="Self.FK_ViaPago_ViaPago" FromRole="ViaPago1" ToRole="ViaPago" />
+        </EntityType>
+        <EntityType Name="ViaTipo">
+          <Key>
+            <PropertyRef Name="ViaTipoId" />
+          </Key>
+          <Property Name="ViaTipoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoPago" Type="String" MaxLength="60" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="ViaDesembolsoes" Relationship="Self.FK_ViaDesembolso_ViaTipo" FromRole="ViaTipo" ToRole="ViaDesembolso" />
+          <NavigationProperty Name="ViaPagoes" Relationship="Self.FK_ViaPago_TipoViaPago" FromRole="ViaTipo" ToRole="ViaPago" />
+        </EntityType>
+        <Association Name="FK_ViaDesembolso_Bancos">
+          <End Role="Bancos" Type="Self.Banco" Multiplicity="0..1" />
+          <End Role="ViaDesembolso" Type="Self.ViaDesembolso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bancos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ViaDesembolso">
+              <PropertyRef Name="BancoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ViaPago_Bancos">
+          <End Role="Bancos" Type="Self.Banco" Multiplicity="0..1" />
+          <End Role="ViaPago" Type="Self.ViaPago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bancos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ViaPago">
+              <PropertyRef Name="BancoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Direccion_Ciudad">
+          <End Role="Ciudad" Type="Self.Ciudad" Multiplicity="0..1" />
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ciudad">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Direccion">
+              <PropertyRef Name="CiudadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Cliente1" Type="Self.Cliente" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cliente1">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Estado">
+          <End Role="Estado" Type="Self.Estado" Multiplicity="0..1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estado">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="EstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_EstadoCivil">
+          <End Role="EstadoCivil" Type="Self.EstadoCivil" Multiplicity="0..1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoCivil">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="EstadoCivil" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Genero">
+          <End Role="Genero" Type="Self.Genero" Multiplicity="0..1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genero">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="Genero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Identificacion">
+          <End Role="Identificacion" Type="Self.Identificacion" Multiplicity="0..1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Identificacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="Identificacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Profesion">
+          <End Role="Profesion" Type="Self.Profesion" Multiplicity="0..1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profesion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="Profesion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Direccion_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Direccion">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prestamos_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+          <End Role="Prestamos" Type="Self.Prestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Prestamos">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Referencia_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+          <End Role="Referencia" Type="Self.Referencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Referencia">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Telefono_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+          <End Role="Telefono" Type="Self.Telefono" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Telefono">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Direccion_Empresa">
+          <End Role="Empresa" Type="Self.Empresa" Multiplicity="0..1" />
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresa">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Direccion">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Direccion_Provincia">
+          <End Role="Provincia" Type="Self.Provincia" Multiplicity="0..1" />
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provincia">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Direccion">
+              <PropertyRef Name="ProvinciaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Direccion_Referencia">
+          <End Role="Referencia" Type="Self.Referencia" Multiplicity="0..1" />
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Referencia">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Direccion">
+              <PropertyRef Name="ReferenciaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Telefono_Empresa">
+          <End Role="Empresa" Type="Self.Empresa" Multiplicity="0..1" />
+          <End Role="Telefono" Type="Self.Telefono" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresa">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Telefono">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ViaDesembolso_Estado">
+          <End Role="Estado" Type="Self.Estado" Multiplicity="0..1" />
+          <End Role="ViaDesembolso" Type="Self.ViaDesembolso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estado">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ViaDesembolso">
+              <PropertyRef Name="EstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Identificacion_IdentificacionTipo">
+          <End Role="IdentificacionTipo" Type="Self.IdentificacionTipo" Multiplicity="0..1" />
+          <End Role="Identificacion" Type="Self.Identificacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IdentificacionTipo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Identificacion">
+              <PropertyRef Name="TipoIdentificacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mensajes_UsuarioFrom">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Mensajes" Type="Self.Mensaje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Mensajes">
+              <PropertyRef Name="UserFrom" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mensajes_UsuarioTo">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Mensajes" Type="Self.Mensaje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Mensajes">
+              <PropertyRef Name="UserTo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prestamos_PrestamoTipo">
+          <End Role="PrestamoTipo" Type="Self.PrestamoTipo" Multiplicity="0..1" />
+          <End Role="Prestamos" Type="Self.Prestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PrestamoTipo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Prestamos">
+              <PropertyRef Name="TipoPrestamoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ViaDesembolso_Prestamos">
+          <End Role="Prestamos" Type="Self.Prestamo" Multiplicity="0..1" />
+          <End Role="ViaDesembolso" Type="Self.ViaDesembolso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prestamos">
+              <PropertyRef Name="PrestamoId" />
+            </Principal>
+            <Dependent Role="ViaDesembolso">
+              <PropertyRef Name="PrestamoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Referencia_ReferenciaTipo">
+          <End Role="ReferenciaTipo" Type="Self.ReferenciaTipo" Multiplicity="0..1" />
+          <End Role="Referencia" Type="Self.Referencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReferenciaTipo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Referencia">
+              <PropertyRef Name="TipoReferencia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Telefono_Referencia">
+          <End Role="Referencia" Type="Self.Referencia" Multiplicity="0..1" />
+          <End Role="Telefono" Type="Self.Telefono" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Referencia">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Telefono">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Telefono_TelefonoTipo">
+          <End Role="TelefonoTipo" Type="Self.TelefonoTipo" Multiplicity="0..1" />
+          <End Role="Telefono" Type="Self.Telefono" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TelefonoTipo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Telefono">
+              <PropertyRef Name="TipoTelefono" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ViaDesembolso_ViaTipo">
+          <End Role="ViaTipo" Type="Self.ViaTipo" Multiplicity="0..1" />
+          <End Role="ViaDesembolso" Type="Self.ViaDesembolso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ViaTipo">
+              <PropertyRef Name="ViaTipoId" />
+            </Principal>
+            <Dependent Role="ViaDesembolso">
+              <PropertyRef Name="ViaTipoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ViaPago_TipoViaPago">
+          <End Role="ViaTipo" Type="Self.ViaTipo" Multiplicity="0..1" />
+          <End Role="ViaPago" Type="Self.ViaPago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ViaTipo">
+              <PropertyRef Name="ViaTipoId" />
+            </Principal>
+            <Dependent Role="ViaPago">
+              <PropertyRef Name="ViaTipoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ViaPago_ViaPago">
+          <End Role="ViaPago" Type="Self.ViaPago" Multiplicity="1" />
+          <End Role="ViaPago1" Type="Self.ViaPago" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ViaPago">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ViaPago1">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PreSysEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bancos" EntityType="Self.Banco" />
+          <EntitySet Name="Ciudads" EntityType="Self.Ciudad" />
+          <EntitySet Name="Clientes" EntityType="Self.Cliente" />
+          <EntitySet Name="Correos" EntityType="Self.Correo" />
+          <EntitySet Name="Cuotas" EntityType="Self.Cuota" />
+          <EntitySet Name="Direccions" EntityType="Self.Direccion" />
+          <EntitySet Name="DireccionTipoes" EntityType="Self.DireccionTipo" />
+          <EntitySet Name="Empresas" EntityType="Self.Empresa" />
+          <EntitySet Name="Estadoes" EntityType="Self.Estado" />
+          <EntitySet Name="EstadoCivils" EntityType="Self.EstadoCivil" />
+          <EntitySet Name="Gastos" EntityType="Self.Gasto" />
+          <EntitySet Name="Generoes" EntityType="Self.Genero" />
+          <EntitySet Name="Identificacions" EntityType="Self.Identificacion" />
+          <EntitySet Name="IdentificacionTipoes" EntityType="Self.IdentificacionTipo" />
+          <EntitySet Name="Logs" EntityType="Self.Log" />
+          <EntitySet Name="Mensajes" EntityType="Self.Mensaje" />
+          <EntitySet Name="Pagos" EntityType="Self.Pago" />
+          <EntitySet Name="Prestamos" EntityType="Self.Prestamo" />
+          <EntitySet Name="PrestamoTipoes" EntityType="Self.PrestamoTipo" />
+          <EntitySet Name="Profesions" EntityType="Self.Profesion" />
+          <EntitySet Name="Provincias" EntityType="Self.Provincia" />
+          <EntitySet Name="Referencias" EntityType="Self.Referencia" />
+          <EntitySet Name="ReferenciaTipoes" EntityType="Self.ReferenciaTipo" />
+          <EntitySet Name="Telefonoes" EntityType="Self.Telefono" />
+          <EntitySet Name="TelefonoTipoes" EntityType="Self.TelefonoTipo" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+          <EntitySet Name="UsuarioTipoes" EntityType="Self.UsuarioTipo" />
+          <EntitySet Name="ViaDesembolsoes" EntityType="Self.ViaDesembolso" />
+          <EntitySet Name="ViaPagoes" EntityType="Self.ViaPago" />
+          <EntitySet Name="ViaTipoes" EntityType="Self.ViaTipo" />
+          <AssociationSet Name="FK_ViaDesembolso_Bancos" Association="Self.FK_ViaDesembolso_Bancos">
+            <End Role="Bancos" EntitySet="Bancos" />
+            <End Role="ViaDesembolso" EntitySet="ViaDesembolsoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ViaPago_Bancos" Association="Self.FK_ViaPago_Bancos">
+            <End Role="Bancos" EntitySet="Bancos" />
+            <End Role="ViaPago" EntitySet="ViaPagoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Direccion_Ciudad" Association="Self.FK_Direccion_Ciudad">
+            <End Role="Ciudad" EntitySet="Ciudads" />
+            <End Role="Direccion" EntitySet="Direccions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Cliente" Association="Self.FK_Cliente_Cliente">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="Cliente1" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Estado" Association="Self.FK_Cliente_Estado">
+            <End Role="Estado" EntitySet="Estadoes" />
+            <End Role="Cliente" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_EstadoCivil" Association="Self.FK_Cliente_EstadoCivil">
+            <End Role="EstadoCivil" EntitySet="EstadoCivils" />
+            <End Role="Cliente" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Genero" Association="Self.FK_Cliente_Genero">
+            <End Role="Genero" EntitySet="Generoes" />
+            <End Role="Cliente" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Identificacion" Association="Self.FK_Cliente_Identificacion">
+            <End Role="Identificacion" EntitySet="Identificacions" />
+            <End Role="Cliente" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Profesion" Association="Self.FK_Cliente_Profesion">
+            <End Role="Profesion" EntitySet="Profesions" />
+            <End Role="Cliente" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Direccion_Cliente" Association="Self.FK_Direccion_Cliente">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="Direccion" EntitySet="Direccions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prestamos_Cliente" Association="Self.FK_Prestamos_Cliente">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="Prestamos" EntitySet="Prestamos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Referencia_Cliente" Association="Self.FK_Referencia_Cliente">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="Referencia" EntitySet="Referencias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Telefono_Cliente" Association="Self.FK_Telefono_Cliente">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="Telefono" EntitySet="Telefonoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Direccion_Empresa" Association="Self.FK_Direccion_Empresa">
+            <End Role="Empresa" EntitySet="Empresas" />
+            <End Role="Direccion" EntitySet="Direccions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Direccion_Provincia" Association="Self.FK_Direccion_Provincia">
+            <End Role="Provincia" EntitySet="Provincias" />
+            <End Role="Direccion" EntitySet="Direccions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Direccion_Referencia" Association="Self.FK_Direccion_Referencia">
+            <End Role="Referencia" EntitySet="Referencias" />
+            <End Role="Direccion" EntitySet="Direccions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Telefono_Empresa" Association="Self.FK_Telefono_Empresa">
+            <End Role="Empresa" EntitySet="Empresas" />
+            <End Role="Telefono" EntitySet="Telefonoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ViaDesembolso_Estado" Association="Self.FK_ViaDesembolso_Estado">
+            <End Role="Estado" EntitySet="Estadoes" />
+            <End Role="ViaDesembolso" EntitySet="ViaDesembolsoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Identificacion_IdentificacionTipo" Association="Self.FK_Identificacion_IdentificacionTipo">
+            <End Role="IdentificacionTipo" EntitySet="IdentificacionTipoes" />
+            <End Role="Identificacion" EntitySet="Identificacions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mensajes_UsuarioFrom" Association="Self.FK_Mensajes_UsuarioFrom">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="Mensajes" EntitySet="Mensajes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mensajes_UsuarioTo" Association="Self.FK_Mensajes_UsuarioTo">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="Mensajes" EntitySet="Mensajes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prestamos_PrestamoTipo" Association="Self.FK_Prestamos_PrestamoTipo">
+            <End Role="PrestamoTipo" EntitySet="PrestamoTipoes" />
+            <End Role="Prestamos" EntitySet="Prestamos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ViaDesembolso_Prestamos" Association="Self.FK_ViaDesembolso_Prestamos">
+            <End Role="Prestamos" EntitySet="Prestamos" />
+            <End Role="ViaDesembolso" EntitySet="ViaDesembolsoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Referencia_ReferenciaTipo" Association="Self.FK_Referencia_ReferenciaTipo">
+            <End Role="ReferenciaTipo" EntitySet="ReferenciaTipoes" />
+            <End Role="Referencia" EntitySet="Referencias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Telefono_Referencia" Association="Self.FK_Telefono_Referencia">
+            <End Role="Referencia" EntitySet="Referencias" />
+            <End Role="Telefono" EntitySet="Telefonoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Telefono_TelefonoTipo" Association="Self.FK_Telefono_TelefonoTipo">
+            <End Role="TelefonoTipo" EntitySet="TelefonoTipoes" />
+            <End Role="Telefono" EntitySet="Telefonoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ViaDesembolso_ViaTipo" Association="Self.FK_ViaDesembolso_ViaTipo">
+            <End Role="ViaTipo" EntitySet="ViaTipoes" />
+            <End Role="ViaDesembolso" EntitySet="ViaDesembolsoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ViaPago_TipoViaPago" Association="Self.FK_ViaPago_TipoViaPago">
+            <End Role="ViaTipo" EntitySet="ViaTipoes" />
+            <End Role="ViaPago" EntitySet="ViaPagoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ViaPago_ViaPago" Association="Self.FK_ViaPago_ViaPago">
+            <End Role="ViaPago" EntitySet="ViaPagoes" />
+            <End Role="ViaPago1" EntitySet="ViaPagoes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PreSysModelStoreContainer" CdmEntityContainer="PreSysEntities">
+          <EntitySetMapping Name="Bancos">
+            <EntityTypeMapping TypeName="PreSysModel.Banco">
+              <MappingFragment StoreEntitySet="Bancos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Banco1" ColumnName="Banco" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ciudads">
+            <EntityTypeMapping TypeName="PreSysModel.Ciudad">
+              <MappingFragment StoreEntitySet="Ciudad">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Ciudad1" ColumnName="Ciudad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clientes">
+            <EntityTypeMapping TypeName="PreSysModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+                <ScalarProperty Name="Genero" ColumnName="Genero" />
+                <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+                <ScalarProperty Name="Profesion" ColumnName="Profesion" />
+                <ScalarProperty Name="EstadoId" ColumnName="EstadoId" />
+                <ScalarProperty Name="Apodo" ColumnName="Apodo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Correos">
+            <EntityTypeMapping TypeName="PreSysModel.Correo">
+              <MappingFragment StoreEntitySet="Correo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+                <ScalarProperty Name="Correo1" ColumnName="Correo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cuotas">
+            <EntityTypeMapping TypeName="PreSysModel.Cuota">
+              <MappingFragment StoreEntitySet="Cuotas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PrestamoId" ColumnName="PrestamoId" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="Capital" ColumnName="Capital" />
+                <ScalarProperty Name="Interes" ColumnName="Interes" />
+                <ScalarProperty Name="Mora" ColumnName="Mora" />
+                <ScalarProperty Name="Costo" ColumnName="Costo" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Direccions">
+            <EntityTypeMapping TypeName="PreSysModel.Direccion">
+              <MappingFragment StoreEntitySet="Direccion">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+                <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+                <ScalarProperty Name="ReferenciaId" ColumnName="ReferenciaId" />
+                <ScalarProperty Name="TipoDireccion" ColumnName="TipoDireccion" />
+                <ScalarProperty Name="Calle" ColumnName="Calle" />
+                <ScalarProperty Name="Esquina" ColumnName="Esquina" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="Edificio" ColumnName="Edificio" />
+                <ScalarProperty Name="Residencial" ColumnName="Residencial" />
+                <ScalarProperty Name="Piso" ColumnName="Piso" />
+                <ScalarProperty Name="Apartamento" ColumnName="Apartamento" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Urbanizacion" ColumnName="Urbanizacion" />
+                <ScalarProperty Name="CiudadId" ColumnName="CiudadId" />
+                <ScalarProperty Name="RefCercana" ColumnName="RefCercana" />
+                <ScalarProperty Name="ProvinciaId" ColumnName="ProvinciaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DireccionTipoes">
+            <EntityTypeMapping TypeName="PreSysModel.DireccionTipo">
+              <MappingFragment StoreEntitySet="DireccionTipo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empresas">
+            <EntityTypeMapping TypeName="PreSysModel.Empresa">
+              <MappingFragment StoreEntitySet="Empresa">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+                <ScalarProperty Name="Empresa1" ColumnName="Empresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estadoes">
+            <EntityTypeMapping TypeName="PreSysModel.Estado">
+              <MappingFragment StoreEntitySet="Estado">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Estado1" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadoCivils">
+            <EntityTypeMapping TypeName="PreSysModel.EstadoCivil">
+              <MappingFragment StoreEntitySet="EstadoCivil">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EstadoCivil1" ColumnName="EstadoCivil" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gastos">
+            <EntityTypeMapping TypeName="PreSysModel.Gasto">
+              <MappingFragment StoreEntitySet="Gastos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TipoGastoId" ColumnName="TipoGastoId" />
+                <ScalarProperty Name="CuotaId" ColumnName="CuotaId" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Generoes">
+            <EntityTypeMapping TypeName="PreSysModel.Genero">
+              <MappingFragment StoreEntitySet="Genero">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Genero1" ColumnName="Genero" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Identificacions">
+            <EntityTypeMapping TypeName="PreSysModel.Identificacion">
+              <MappingFragment StoreEntitySet="Identificacion">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TipoIdentificacion" ColumnName="TipoIdentificacion" />
+                <ScalarProperty Name="Identificacion1" ColumnName="Identificacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IdentificacionTipoes">
+            <EntityTypeMapping TypeName="PreSysModel.IdentificacionTipo">
+              <MappingFragment StoreEntitySet="IdentificacionTipo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logs">
+            <EntityTypeMapping TypeName="PreSysModel.Log">
+              <MappingFragment StoreEntitySet="Logs">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="Accion" ColumnName="Accion" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mensajes">
+            <EntityTypeMapping TypeName="PreSysModel.Mensaje">
+              <MappingFragment StoreEntitySet="Mensajes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserFrom" ColumnName="UserFrom" />
+                <ScalarProperty Name="UserTo" ColumnName="UserTo" />
+                <ScalarProperty Name="Mensaje1" ColumnName="Mensaje" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pagos">
+            <EntityTypeMapping TypeName="PreSysModel.Pago">
+              <MappingFragment StoreEntitySet="Pagos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CuotaId" ColumnName="CuotaId" />
+                <ScalarProperty Name="PrestamoId" ColumnName="PrestamoId" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="Capital" ColumnName="Capital" />
+                <ScalarProperty Name="Interes" ColumnName="Interes" />
+                <ScalarProperty Name="Mora" ColumnName="Mora" />
+                <ScalarProperty Name="Costo" ColumnName="Costo" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="CuotasPagadas" ColumnName="CuotasPagadas" />
+                <ScalarProperty Name="CuotasPendientes" ColumnName="CuotasPendientes" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="ViaPagoId" ColumnName="ViaPagoId" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prestamos">
+            <EntityTypeMapping TypeName="PreSysModel.Prestamo">
+              <MappingFragment StoreEntitySet="Prestamos">
+                <ScalarProperty Name="PrestamoId" ColumnName="PrestamoId" />
+                <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+                <ScalarProperty Name="TipoPrestamoId" ColumnName="TipoPrestamoId" />
+                <ScalarProperty Name="FechaApertura" ColumnName="FechaApertura" />
+                <ScalarProperty Name="FechaTermino" ColumnName="FechaTermino" />
+                <ScalarProperty Name="Frecuencia" ColumnName="Frecuencia" />
+                <ScalarProperty Name="MontoPrestamo" ColumnName="MontoPrestamo" />
+                <ScalarProperty Name="Tasa" ColumnName="Tasa" />
+                <ScalarProperty Name="Cuota" ColumnName="Cuota" />
+                <ScalarProperty Name="CantCuotas" ColumnName="CantCuotas" />
+                <ScalarProperty Name="Capital" ColumnName="Capital" />
+                <ScalarProperty Name="Interes" ColumnName="Interes" />
+                <ScalarProperty Name="BalanceCorriente" ColumnName="BalanceCorriente" />
+                <ScalarProperty Name="BalanceTermino" ColumnName="BalanceTermino" />
+                <ScalarProperty Name="MontoAtraso" ColumnName="MontoAtraso" />
+                <ScalarProperty Name="CuotasAtrasadas" ColumnName="CuotasAtrasadas" />
+                <ScalarProperty Name="FechaultimoPago" ColumnName="FechaultimoPago" />
+                <ScalarProperty Name="MontoUltimoPago" ColumnName="MontoUltimoPago" />
+                <ScalarProperty Name="EstadoCuenta" ColumnName="EstadoCuenta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrestamoTipoes">
+            <EntityTypeMapping TypeName="PreSysModel.PrestamoTipo">
+              <MappingFragment StoreEntitySet="PrestamoTipo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TipoPrestamo" ColumnName="TipoPrestamo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Profesions">
+            <EntityTypeMapping TypeName="PreSysModel.Profesion">
+              <MappingFragment StoreEntitySet="Profesion">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Profesion1" ColumnName="Profesion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Provincias">
+            <EntityTypeMapping TypeName="PreSysModel.Provincia">
+              <MappingFragment StoreEntitySet="Provincia">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Provincia1" ColumnName="Provincia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Referencias">
+            <EntityTypeMapping TypeName="PreSysModel.Referencia">
+              <MappingFragment StoreEntitySet="Referencia">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+                <ScalarProperty Name="TipoReferencia" ColumnName="TipoReferencia" />
+                <ScalarProperty Name="Referencia1" ColumnName="Referencia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReferenciaTipoes">
+            <EntityTypeMapping TypeName="PreSysModel.ReferenciaTipo">
+              <MappingFragment StoreEntitySet="ReferenciaTipo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Referencia" ColumnName="Referencia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Telefonoes">
+            <EntityTypeMapping TypeName="PreSysModel.Telefono">
+              <MappingFragment StoreEntitySet="Telefono">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+                <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+                <ScalarProperty Name="ReferenciaId" ColumnName="ReferenciaId" />
+                <ScalarProperty Name="TipoTelefono" ColumnName="TipoTelefono" />
+                <ScalarProperty Name="Telefono1" ColumnName="Telefono" />
+                <ScalarProperty Name="Extension" ColumnName="Extension" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TelefonoTipoes">
+            <EntityTypeMapping TypeName="PreSysModel.TelefonoTipo">
+              <MappingFragment StoreEntitySet="TelefonoTipo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TipoTelefono" ColumnName="TipoTelefono" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="PreSysModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Usuario1" ColumnName="Usuario" />
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+                <ScalarProperty Name="TipoUsuario" ColumnName="TipoUsuario" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="UltimoLogin" ColumnName="UltimoLogin" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsuarioTipoes">
+            <EntityTypeMapping TypeName="PreSysModel.UsuarioTipo">
+              <MappingFragment StoreEntitySet="UsuarioTipo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TipoUsuario" ColumnName="TipoUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViaDesembolsoes">
+            <EntityTypeMapping TypeName="PreSysModel.ViaDesembolso">
+              <MappingFragment StoreEntitySet="ViaDesembolso">
+                <ScalarProperty Name="DesembolsoId" ColumnName="DesembolsoId" />
+                <ScalarProperty Name="BancoId" ColumnName="BancoId" />
+                <ScalarProperty Name="ViaTipoId" ColumnName="ViaTipoId" />
+                <ScalarProperty Name="Referencia" ColumnName="Referencia" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="MontoDesembolso" ColumnName="MontoDesembolso" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="EstadoId" ColumnName="EstadoId" />
+                <ScalarProperty Name="PrestamoId" ColumnName="PrestamoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViaPagoes">
+            <EntityTypeMapping TypeName="PreSysModel.ViaPago">
+              <MappingFragment StoreEntitySet="ViaPago">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BancoId" ColumnName="BancoId" />
+                <ScalarProperty Name="ViaTipoID" ColumnName="ViaTipoID" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Referencia" ColumnName="Referencia" />
+                <ScalarProperty Name="MontoPago" ColumnName="MontoPago" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViaTipoes">
+            <EntityTypeMapping TypeName="PreSysModel.ViaTipo">
+              <MappingFragment StoreEntitySet="ViaTipo">
+                <ScalarProperty Name="ViaTipoId" ColumnName="ViaTipoId" />
+                <ScalarProperty Name="TipoPago" ColumnName="TipoPago" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

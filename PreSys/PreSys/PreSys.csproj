@@ -46,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -53,6 +59,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -177,17 +184,123 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Banco.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ciudad.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PagosController.cs" />
     <Compile Include="Controllers\PrestamosController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Correo.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cuota.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Direccion.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DireccionTipo.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Estado.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoCivil.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Gasto.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Genero.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Identificacion.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IdentificacionTipo.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Log.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mensaje.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelPresys.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPresys.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelPresys.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelPresys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPresys.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClientModel.cs" />
+    <Compile Include="Pago.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prestamo.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrestamoTipo.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Profesion.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Provincia.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Referencia.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReferenciaTipo.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Telefono.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TelefonoTipo.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsuarioTipo.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViaDesembolso.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViaPago.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViaTipo.cs">
+      <DependentUpon>ModelPresys.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -232,6 +345,7 @@
     <Content Include="assets\dist\img\wow-slider-logo.png" />
     <Content Include="assets\dist\img\Zipper-icon.jpg" />
     <Content Include="assets\dist\js\angular.min.js" />
+    <Content Include="assets\dist\js\controllers\clientsController.js" />
     <Content Include="assets\dist\js\controllers\loginController.js" />
     <Content Include="assets\dist\js\page\dashboard.js" />
     <Content Include="assets\dist\js\page\dashboard.min.js" />
@@ -1835,6 +1949,16 @@
     <Content Include="assets\weather-icons\font\weathericons-regular-webfont.woff" />
     <Content Include="assets\weather-icons\font\weathericons-regular-webfont.woff2" />
     <Content Include="assets\weather-icons\README.md" />
+    <Content Include="ModelPresys.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelPresys.Context.cs</LastGenOutput>
+      <DependentUpon>ModelPresys.edmx</DependentUpon>
+    </Content>
+    <Content Include="ModelPresys.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelPresys.edmx</DependentUpon>
+      <LastGenOutput>ModelPresys.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1856,7 +1980,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -1868,6 +1991,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="ModelPresys.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelPresys.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="ModelPresys.edmx.diagram">
+      <DependentUpon>ModelPresys.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Views\Clients\ClientsList.cshtml" />
     <Content Include="Views\Clients\New.cshtml" />
@@ -1875,6 +2005,9 @@
     <Content Include="Views\Prestamos\PrestamosList.cshtml" />
     <Content Include="Views\Prestamos\Nuevo.cshtml" />
     <Content Include="Views\Pagos\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
